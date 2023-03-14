@@ -12,7 +12,7 @@
 - Desarrollar cada componente y layout en storybook.
 - Desarrollar test unitarios de cada componente.
 - Maquetear vistas.
-- Agreagar endpoint.
+- Agregar endpoint.
 - Agregar logicas y pautas del juego.
 
 ### Tools de desarrollo
