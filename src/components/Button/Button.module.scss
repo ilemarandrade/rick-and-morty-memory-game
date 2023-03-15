@@ -1,4 +1,4 @@
-@use "../../App.scss";
+@use "../../App";
 
 /**Variables**/
 $primary-color: #a2f2f9;
@@ -18,7 +18,7 @@ $secondary-color: #d8e054;
   font-size: 24px;
   line-height: 29px;
   letter-spacing: 0.1em;
-  color: #233a59;
+  color: App.$font-color-primary;
   transition: scale 1s;
   padding: 0 80px;
   &:hover {
@@ -34,9 +34,4 @@ $secondary-color: #d8e054;
 .button-color-secondary {
   background: $secondary-color;
   border-color: $primary-color;
-}
-
-:export {
-  primaryColor: $primary-color;
-  secondaryColor: $secondary-color;
 }
