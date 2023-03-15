@@ -2,6 +2,8 @@
 
 .layout {
   background: #1c1d3b;
+  padding: 24px;
+  padding-bottom: 0px;
 }
 .main {
   @extend %perfect-centered;
