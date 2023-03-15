@@ -6,6 +6,7 @@ interface ComponentSelected {
   onClick?: () => void;
   component?: unknown;
   href?: string;
+  to?: string;
 }
 interface Props extends ComponentSelected {
   label: string;

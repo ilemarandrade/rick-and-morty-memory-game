@@ -9,7 +9,13 @@ $font-color-secondary: #000000;
   box-sizing: border-box;
 }
 
-body {
+body,
+p,
+h1,
+h2,
+h3,
+h4,
+h5 {
   margin: 0px;
 }
 %perfect-centered {
@@ -20,4 +26,8 @@ body {
 
 .perfect-centered {
   @extend %perfect-centered;
+}
+
+.mb-1-5 {
+  margin-bottom: 1.5rem;
 }
