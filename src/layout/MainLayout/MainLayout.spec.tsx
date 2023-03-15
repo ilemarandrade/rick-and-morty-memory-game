@@ -3,7 +3,7 @@ import { render, screen } from "../../__test__/utils/customRender";
 import MainLayout from "./index";
 
 describe("<MainLayout />", () => {
-  it("Should show the Section", () => {
+  it("Should show the MainLayout", () => {
     render(
       <MainLayout>
         <div>I am a children</div>
