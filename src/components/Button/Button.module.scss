@@ -19,7 +19,7 @@ $secondary-color: #d8e054;
   line-height: 29px;
   letter-spacing: 0.1em;
   color: App.$font-color-primary;
-  transition: scale 1s;
+  transition: transform 0.2s;
   padding: 0 80px;
   &:hover {
     transform: scale(1.05);
