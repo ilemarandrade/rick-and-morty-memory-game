@@ -11,6 +11,7 @@
 - Descargar las imagenes necesarias de figma.
 - Desarrollar cada componente y layout en storybook.
 - Desarrollar test unitarios de cada componente.
+- Crear rutas de la app
 - Maquetear vistas.
 - Agregar endpoint.
 - Agregar logicas y pautas del juego.
