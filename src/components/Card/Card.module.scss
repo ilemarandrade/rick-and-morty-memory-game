@@ -38,7 +38,12 @@
 .card-close {
   @extend %perfect-centered;
   background: #a2f2f9;
+  cursor: pointer;
   img {
     width: 100%;
+  }
+  transition: transform 0.2s;
+  &:hover {
+    transform: scale(1.05);
   }
 }
