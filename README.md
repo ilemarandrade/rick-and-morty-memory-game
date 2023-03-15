@@ -9,7 +9,7 @@
 - Definir Layouts a crear.
 - Definir nombre de las rutas.
 - Descargar las imagenes necesarias de figma.
-- Desarrollar cada componente y layout en storybook ademas hacer sus respectivos test unitarios.
+- Desarrollar cada componente y layout en storybook ademas hacer sus respectivos test unitarios a lo componentes.
 - Crear rutas de la app
 - Maquetear vistas.
 - Agregar endpoint.
