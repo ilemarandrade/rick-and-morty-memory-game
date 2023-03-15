@@ -1,0 +1,23 @@
+@use "../../App";
+
+.header {
+  width: 100%;
+  flex-direction: column;
+  @extend %perfect-centered;
+  img {
+    width: 500px;
+  }
+}
+
+.subtitle {
+  background: #d8e054;
+  border-radius: 25px;
+  padding: 8px 16px;
+  width: max-content;
+  h1 {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    margin: 0;
+  }
+}
