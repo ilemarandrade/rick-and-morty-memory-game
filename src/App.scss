@@ -27,7 +27,12 @@ h5 {
 .perfect-centered {
   @extend %perfect-centered;
 }
-
+.d-flex {
+  display: flex;
+}
+.jc-space-between {
+  justify-content: space-between;
+}
 .mb-1-5 {
   margin-bottom: 1.5rem;
 }
