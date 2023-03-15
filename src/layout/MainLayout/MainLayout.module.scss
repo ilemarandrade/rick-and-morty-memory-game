@@ -7,6 +7,7 @@
 }
 .main {
   @extend %perfect-centered;
-  height: calc(100vh - 212px);
+  align-items: initial;
+  min-height: calc(100vh - 276px);
   margin-top: 40px;
 }
