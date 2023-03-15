@@ -5,7 +5,7 @@ import Section from "./index";
 import Card from "../Card";
 
 export default {
-  title: "Example/Section",
+  title: "Components/Section",
   component: Section,
 } as ComponentMeta<typeof Section>;
 
