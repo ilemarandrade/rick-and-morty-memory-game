@@ -9,6 +9,9 @@ $font-color-secondary: #000000;
   box-sizing: border-box;
 }
 
+body {
+  margin: 0px;
+}
 %perfect-centered {
   display: flex;
   align-items: center;
