@@ -17,6 +17,9 @@ CardOpen.args = {
   origin: "Alive - Human",
   open: true,
   id: 1,
+  onClick: (id) => {
+    alert(id);
+  },
 };
 
 export const CardClose = Template.bind({});
@@ -24,5 +27,8 @@ CardClose.args = {
   img: "https://placekitten.com/200/200",
   name: "Ilemar Andrade",
   origin: "Alive - Human",
-  id: 1,
+  id: 2,
+  onClick: (id) => {
+    alert(id);
+  },
 };
