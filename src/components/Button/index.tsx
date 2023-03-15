@@ -24,18 +24,21 @@ const Component = ({
 const Button = ({
   label,
   color = "primary",
-  onClick = () => {},
-  component = "a",
+  onClick,
+  component = "div",
   ...restProps
 }: Props) => {
-  const isButton = component === "button";
   const props = {
     color,
-    onClick: isButton ? onClick : undefined,
+    onClick,
     className: `${classes["button-base"]} ${classes[`button-color-${color}`]}`,
     ...restProps,
   };
-  return <Component {...{ props, component }}>{label}</Component>;
+  return (
+    <Component {...{ props, component: onClick ? "button" : component }}>
+      {label}
+    </Component>
+  );
 };
 
 export default Button;
