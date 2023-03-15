@@ -1,0 +1,10 @@
+@use "../../App";
+
+.layout {
+  background: #1c1d3b;
+}
+.main {
+  @extend %perfect-centered;
+  height: calc(100vh - 212px);
+  margin-top: 40px;
+}
