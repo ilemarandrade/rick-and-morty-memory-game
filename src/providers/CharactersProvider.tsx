@@ -1,4 +1,4 @@
-import { ReactNode, useEffect } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import { useHistory, useLocation } from "react-router";
 import routes from "../constants/routes";
 import CharactersContext from "../contexts/CharactersContext";
@@ -11,6 +11,8 @@ const CharactersProvider = ({ children }: Props) => {
   const history = useHistory();
   const { pathname } = useLocation();
   const { getCharacters, data: characters } = useGetCharacters();
+  const [success, setSuccess] = useState(0);
+  const [turns, setTurns] = useState(0);
 
   useEffect(() => {
     if (pathname === routes.HOME && !characters) {
@@ -21,7 +23,9 @@ const CharactersProvider = ({ children }: Props) => {
   }, [characters, getCharacters, history, pathname]);
 
   return (
-    <CharactersContext.Provider value={{ characters }}>
+    <CharactersContext.Provider
+      value={{ characters, success, setSuccess, turns, setTurns }}
+    >
       {children}
     </CharactersContext.Provider>
   );
