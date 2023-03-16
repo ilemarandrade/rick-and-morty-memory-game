@@ -1,5 +1,5 @@
 import { createContext, useContext } from "react";
-import { ICharacters } from "../components/models/endPointsModel";
+import { ICharacters } from "../models/endPointsModel";
 
 interface IContext {
   characters: ICharacters[] | null;
