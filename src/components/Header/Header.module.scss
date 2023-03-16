@@ -13,7 +13,7 @@
 .subtitle {
   background: #d8e054;
   border-radius: 25px;
-  padding: 4px 8px;
+  padding: 4px 12px;
   width: max-content;
   h1 {
     font-weight: 700;
@@ -29,6 +29,7 @@
     }
   }
   .subtitle {
+    padding: 8px 16px;
     h1 {
       font-size: 20px;
       line-height: 24px;
