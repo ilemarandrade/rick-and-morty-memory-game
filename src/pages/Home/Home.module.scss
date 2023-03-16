@@ -1,0 +1,9 @@
+@use "../../App.scss";
+
+.containerButton {
+  @extend %perfect-centered;
+  position: fixed;
+  bottom: 10px;
+  left: 0px;
+  width: 100%;
+}

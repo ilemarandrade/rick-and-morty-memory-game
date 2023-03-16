@@ -3,6 +3,7 @@ import Button from "../../components/Button";
 import GameBoard from "../../components/GameBoard";
 import routes from "../../constants/routes";
 import { useCharactersState } from "../../contexts/CharactersContext";
+import classes from "./Home.module.scss";
 
 const Home = () => {
   const { characters } = useCharactersState();
@@ -10,7 +11,7 @@ const Home = () => {
     <>
       <h2 className="mb-1-5">Personajes</h2>
       {characters && <GameBoard data={characters} />}
-      <div className="perfect-centered">
+      <div className={classes.containerButton}>
         <Button label="Jugar" component={NavLink} to={routes.PLAY} />
       </div>
     </>
