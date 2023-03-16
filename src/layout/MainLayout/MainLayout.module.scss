@@ -5,12 +5,14 @@
   padding: 16px 0px;
   padding-bottom: 0px !important;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 .main {
   @extend %perfect-centered;
   align-items: initial;
-  min-height: calc(100vh - 276px);
   margin-top: 40px;
+  flex-grow: 1;
 }
 
 @media (min-width: #{App.$md}) {
