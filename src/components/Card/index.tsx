@@ -30,7 +30,7 @@ const Card = ({
       ${classes[`card-${open ? "open" : "close"}`]} ${classes.card} ${
         classes[wasFound ? "wasFound" : ""]
       }`}
-      onClick={() => onClick()}
+      onClick={() => !open && onClick()}
     >
       {open ? (
         <>
