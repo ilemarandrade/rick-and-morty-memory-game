@@ -2,7 +2,7 @@ import { useCallback, useState } from "react";
 import {
   ICharacters,
   IResponseCharactersEndpoint,
-} from "../../components/models/endPointsModel";
+} from "../../models/endPointsModel";
 import handleRequest from "../../utils/handleRequest";
 
 const useGetCharacters = () => {

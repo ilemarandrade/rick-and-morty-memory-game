@@ -1,5 +1,6 @@
 import { lazy, Suspense } from "react";
 import { Route, Switch } from "react-router";
+import Loading from "../components/Loading";
 import routes from "../constants/routes";
 
 const routesPublic = [

@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router";
 import GameBoard from "../../components/GameBoard";
-import { ICharacters } from "../../components/models/endPointsModel";
-import { AllNumberKeys } from "../../components/models/generics";
+import { ICharacters } from "../../models/endPointsModel";
+import { AllNumberKeys } from "../../models/generics";
 import routes from "../../constants/routes";
 import { useCharactersState } from "../../contexts/CharactersContext";
 

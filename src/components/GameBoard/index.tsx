@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 import Card from "../Card";
-import { AllNumberKeys } from "../models/generics";
+import { AllNumberKeys } from "../../models/generics";
 import classes from "./GameBoard.module.scss";
 interface Props {
   data: {

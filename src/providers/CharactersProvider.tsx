@@ -1,3 +1,4 @@
+import Loading from "../components/Loading";
 import { ReactNode, useEffect, useState } from "react";
 import { useHistory, useLocation } from "react-router";
 import routes from "../constants/routes";
@@ -10,17 +11,24 @@ interface Props {
 const CharactersProvider = ({ children }: Props) => {
   const history = useHistory();
   const { pathname } = useLocation();
-  const { getCharacters, data: characters } = useGetCharacters();
+  const [isFirstRender, setIsFirstRender] = useState(true);
+  const { getCharacters, data: characters, isLoading } = useGetCharacters();
   const [success, setSuccess] = useState(0);
   const [turns, setTurns] = useState(0);
 
   useEffect(() => {
+    if (isFirstRender) {
+      setTimeout(() => {
+        setIsFirstRender(false);
+      }, 2000);
+    }
     if (pathname === routes.HOME && !characters) {
       getCharacters();
     } else if (pathname !== routes.HOME && !characters) {
       history.push(routes.HOME);
     }
-  }, [characters, getCharacters, history, pathname]);
+  }, [characters, getCharacters, history, isFirstRender, pathname]);
+
   useEffect(() => {
     if (pathname !== routes.PLAY) {
       setSuccess(0);
@@ -32,7 +40,8 @@ const CharactersProvider = ({ children }: Props) => {
     <CharactersContext.Provider
       value={{ characters, success, setSuccess, turns, setTurns }}
     >
-      {children}
+      {(isFirstRender || isLoading) && <Loading isWelcome={isFirstRender} />}
+      {!isFirstRender && children}
     </CharactersContext.Provider>
   );
 };
