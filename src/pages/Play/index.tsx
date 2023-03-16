@@ -15,6 +15,8 @@ const randomCharacters = (characters: ICharacters[] | null) => {
 
 const Play = () => {
   const { characters } = useCharactersState();
+  const [isBlockOnClick, setIsBlockOnClick] = useState(false);
+  const [cardOpen, setCardOpen] = useState<number | false>(false);
   const [charactersState, setCharactersState] = useState(() => {
     const value = randomCharacters(characters)?.map(({ ...keys }, index) => ({
       ...keys,
@@ -23,6 +25,30 @@ const Play = () => {
     }));
     return value;
   });
+  const verifyMath = (id: number) => {
+    if (!cardOpen) {
+      setCardOpen(id);
+      return;
+    } else {
+      setIsBlockOnClick(true);
+      setTimeout(() => {
+        if (cardOpen === id) {
+          setCharactersState((prev) =>
+            prev?.filter((currentCharacter) => currentCharacter.id !== id)
+          );
+        } else {
+          setCharactersState((prev) =>
+            prev?.map((currentCharacter) => ({
+              ...currentCharacter,
+              open: false,
+            }))
+          );
+        }
+        setCardOpen(false);
+        setIsBlockOnClick(false);
+      }, 1000);
+    }
+  };
   const closeAll = () => {
     setCharactersState(
       charactersState?.map(({ ...values }) => ({
@@ -33,6 +59,9 @@ const Play = () => {
   };
 
   const openCard = ({ position, id }: AllNumberKeys) => {
+    if (isBlockOnClick) {
+      return;
+    }
     setCharactersState((prev) =>
       prev?.map((currentCharacter) =>
         currentCharacter.position === position
@@ -40,6 +69,7 @@ const Play = () => {
           : currentCharacter
       )
     );
+    verifyMath(id);
   };
 
   useEffect(() => {
