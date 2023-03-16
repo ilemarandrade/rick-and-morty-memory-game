@@ -38,7 +38,14 @@ const Play = () => {
       setTimeout(() => {
         if (cardOpen === id) {
           setCharactersState((prev) =>
-            prev?.filter((currentCharacter) => currentCharacter.id !== id)
+            prev?.map((currentCharacter) =>
+              currentCharacter.id === id
+                ? {
+                    ...currentCharacter,
+                    wasFound: true,
+                  }
+                : currentCharacter
+            )
           );
           setSuccess(success + 1);
         } else {
@@ -60,6 +67,7 @@ const Play = () => {
       charactersState?.map(({ ...values }) => ({
         ...values,
         open: false,
+        wasFound: false,
       }))
     );
   };
@@ -82,16 +90,14 @@ const Play = () => {
     setTimeout(() => {
       closeAll();
     }, 3000);
-    setTurns(0);
-    setSuccess(0);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
-    if (!charactersState?.length) {
+    if (success === 6) {
       history.push(routes.GAMEOVER);
     }
-  }, [charactersState?.length, history]);
+  }, [history, success]);
 
   return (
     <>

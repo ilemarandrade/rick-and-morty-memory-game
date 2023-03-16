@@ -7,12 +7,21 @@ interface Props {
   origin: string;
   open?: boolean;
   onClick: () => void;
+  wasFound?: boolean;
 }
-const Card = ({ img, name, origin, open = false, onClick }: Props) => {
+const Card = ({
+  img,
+  name,
+  origin,
+  open = false,
+  onClick,
+  wasFound = false,
+}: Props) => {
   return (
     <button
-      className={`${classes[`card-${open ? "open" : "close"}`]} ${
-        classes.card
+      className={`
+      ${classes[`card-${open ? "open" : "close"}`]} ${classes.card} ${
+        classes[wasFound ? "wasFound" : ""]
       }`}
       onClick={() => onClick()}
     >

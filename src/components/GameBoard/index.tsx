@@ -12,6 +12,7 @@ interface Props {
     onClick?: (data: AllNumberKeys) => void;
     open?: boolean;
     position?: number;
+    wasFound?: boolean;
   }[];
   onClickToCard?: any;
 }
@@ -21,7 +22,16 @@ const GameBoard = ({ data, onClickToCard }: Props) => {
     () => (
       <>
         {data.map(
-          ({ name, image, status, species, id, open = true, position = 0 }) => (
+          ({
+            name,
+            image,
+            status,
+            species,
+            id,
+            open = true,
+            position = 0,
+            wasFound = false,
+          }) => (
             <Card
               key={id + position + name}
               name={name}
@@ -29,6 +39,7 @@ const GameBoard = ({ data, onClickToCard }: Props) => {
               open={open}
               origin={`${status} - ${species}`}
               onClick={() => onClickToCard && onClickToCard({ id, position })}
+              wasFound={wasFound}
             />
           )
         )}
