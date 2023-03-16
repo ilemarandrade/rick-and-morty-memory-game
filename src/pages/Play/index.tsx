@@ -22,6 +22,21 @@ const Play = () => {
     }));
     return value;
   });
+  const closeAll = () => {
+    setCharactersState(
+      charactersState?.map(({ ...values }) => ({
+        ...values,
+        open: false,
+      }))
+    );
+  };
+
+  useEffect(() => {
+    setTimeout(() => {
+      closeAll();
+    }, 3000);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <>
