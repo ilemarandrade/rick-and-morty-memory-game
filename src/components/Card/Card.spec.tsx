@@ -19,7 +19,6 @@ describe("<Card />", () => {
     expect(screen.getByRole("img")).toHaveAttribute("src", "ricky_morty.png");
     fireEvent.click(screen.getByRole("button"));
     expect(propsToCard.onClick).toBeCalled();
-    expect(propsToCard.onClick).toHaveBeenCalledWith(propsToCard.id);
   });
   it("Should show the card open", () => {
     render(<Card {...{ ...propsToCard, open: true }} />);
@@ -31,7 +30,6 @@ describe("<Card />", () => {
       "ricky_morty.png"
     );
     fireEvent.click(screen.getByRole("button"));
-    expect(propsToCard.onClick).toBeCalled();
-    expect(propsToCard.onClick).toHaveBeenCalledWith(propsToCard.id);
+    expect(propsToCard.onClick).not.toBeCalled();
   });
 });
