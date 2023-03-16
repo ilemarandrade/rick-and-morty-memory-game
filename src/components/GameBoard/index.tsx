@@ -28,13 +28,13 @@ const GameBoard = ({ data, onClickToCard }: Props) => {
               img={image}
               open={open}
               origin={`${status} - ${species}`}
-              onClick={() => onClickToCard({ id, position })}
+              onClick={() => onClickToCard && onClickToCard({ id, position })}
             />
           )
         )}
       </>
     ),
-    [data]
+    [data, onClickToCard]
   );
   return <div className={classes.root}>{cards}</div>;
 };
