@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
+import { useHistory } from "react-router";
 import GameBoard from "../../components/GameBoard";
 import { ICharacters } from "../../components/models/endPointsModel";
 import { AllNumberKeys } from "../../components/models/generics";
+import routes from "../../constants/routes";
 import { useCharactersState } from "../../contexts/CharactersContext";
 
 const randomCharacters = (characters: ICharacters[] | null) => {
@@ -14,7 +16,9 @@ const randomCharacters = (characters: ICharacters[] | null) => {
 };
 
 const Play = () => {
-  const { characters } = useCharactersState();
+  const history = useHistory();
+  const { characters, success, setSuccess, turns, setTurns } =
+    useCharactersState();
   const [isBlockOnClick, setIsBlockOnClick] = useState(false);
   const [cardOpen, setCardOpen] = useState<number | false>(false);
   const [charactersState, setCharactersState] = useState(() => {
@@ -36,6 +40,7 @@ const Play = () => {
           setCharactersState((prev) =>
             prev?.filter((currentCharacter) => currentCharacter.id !== id)
           );
+          setSuccess(success + 1);
         } else {
           setCharactersState((prev) =>
             prev?.map((currentCharacter) => ({
@@ -46,6 +51,7 @@ const Play = () => {
         }
         setCardOpen(false);
         setIsBlockOnClick(false);
+        setTurns(turns + 1);
       }, 1000);
     }
   };
@@ -79,11 +85,17 @@ const Play = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  useEffect(() => {
+    if (!charactersState?.length) {
+      history.push(routes.GAMEOVER);
+    }
+  }, [charactersState?.length, history]);
+
   return (
     <>
       <div className="d-flex jc-space-between">
-        <h2 className="mb-1-5">Aciertos:</h2>
-        <h2 className="mb-1-5">Turnos:</h2>
+        <h2 className="mb-1-5">{`Aciertos: ${success}`}</h2>
+        <h2 className="mb-1-5">{`Turnos: ${turns}`}</h2>
       </div>
       {charactersState && (
         <GameBoard data={charactersState} onClickToCard={openCard} />
