@@ -1,5 +1,11 @@
 @use "../../App";
 
+%text-ellipsis {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+}
 .card {
   padding: 16px;
   width: 212px;
@@ -15,6 +21,7 @@
   h4,
   p {
     margin: 0;
+    text-align: left;
   }
   img {
     width: 100%;
@@ -24,12 +31,14 @@
 }
 
 .name {
+  @extend %text-ellipsis;
   color: App.$font-color-primary;
   font-weight: 700;
   font-size: 16px;
   line-height: 22px;
 }
 .origin {
+  @extend %text-ellipsis;
   color: App.$font-color-secondary;
   font-size: 10px;
   line-height: 12px;

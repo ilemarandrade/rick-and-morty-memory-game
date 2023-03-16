@@ -28,7 +28,9 @@ const Card = ({
       {open ? (
         <>
           <img alt={name} src={img} />
-          <p className={classes.name}>{name}</p>
+          <p className={classes.name} title={name}>
+            {name}
+          </p>
           <p className={classes.origin}>{origin}</p>
         </>
       ) : (
