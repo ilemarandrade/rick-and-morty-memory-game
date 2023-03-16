@@ -21,7 +21,7 @@ const routesPublic = [
 const Routes = () => {
   return (
     <Switch>
-      <Suspense fallback={<Loading />}>
+      <Suspense fallback="...loading">
         {routesPublic.map(({ ...args }) => (
           <Route {...{ ...args }} key={args.path} />
         ))}
