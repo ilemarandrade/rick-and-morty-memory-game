@@ -4,6 +4,7 @@ import { useHistory, useLocation } from "react-router";
 import routes from "../constants/routes";
 import CharactersContext from "../contexts/CharactersContext";
 import useGetCharacters from "../hooks/api/useGetCharacter";
+import { getKey, KEYSHOWINTRUCTIONS } from "../utils/localStorage";
 
 interface Props {
   children: ReactNode;
@@ -16,7 +17,8 @@ const CharactersProvider = ({ children }: Props) => {
   const { getCharacters, data: characters, isLoading } = useGetCharacters();
   const [success, setSuccess] = useState(0);
   const [turns, setTurns] = useState(0);
-
+  const showIntructions = !(getKey(KEYSHOWINTRUCTIONS) === "not");
+  console.log({ showIntructions });
   useEffect(() => {
     if (isFirstRender) {
       setTimeout(() => {
@@ -39,7 +41,15 @@ const CharactersProvider = ({ children }: Props) => {
   }, [pathname]);
   return (
     <CharactersContext.Provider
-      value={{ characters, success, setSuccess, turns, setTurns, isPlaying }}
+      value={{
+        characters,
+        success,
+        setSuccess,
+        turns,
+        setTurns,
+        isPlaying,
+        showIntructions,
+      }}
     >
       {(isFirstRender || isLoading) && <Loading isWelcome={isFirstRender} />}
       {children}

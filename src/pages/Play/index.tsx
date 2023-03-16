@@ -1,10 +1,12 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useHistory } from "react-router";
 import GameBoard from "../../components/GameBoard";
 import { ICharacters } from "../../models/endPointsModel";
 import { AllNumberKeys } from "../../models/generics";
 import routes from "../../constants/routes";
 import { useCharactersState } from "../../contexts/CharactersContext";
+import Intructions from "../../components/Intructions";
+import { KEYSHOWINTRUCTIONS, setKey } from "../../utils/localStorage";
 
 const randomCharacters = (characters: ICharacters[] | null) => {
   if (characters) {
@@ -17,8 +19,9 @@ const randomCharacters = (characters: ICharacters[] | null) => {
 
 const Play = () => {
   const history = useHistory();
-  const { characters, success, setSuccess, turns, setTurns } =
+  const { characters, success, setSuccess, turns, setTurns, showIntructions } =
     useCharactersState();
+  const [play, setPlay] = useState(false);
   const [isBlockOnClick, setIsBlockOnClick] = useState(false);
   const [cardOpen, setCardOpen] = useState<number | false>(false);
   const [charactersState, setCharactersState] = useState(() => {
@@ -47,7 +50,11 @@ const Play = () => {
                 : currentCharacter
             )
           );
-          setSuccess(success + 1);
+          if (success === 5) {
+            history.push(routes.GAMEOVER);
+          } else {
+            setSuccess(success + 1);
+          }
         } else {
           setCharactersState((prev) =>
             prev?.map((currentCharacter) => ({
@@ -62,7 +69,7 @@ const Play = () => {
       }, 1000);
     }
   };
-  const closeAll = () => {
+  const closeAll = useCallback(() => {
     setCharactersState(
       charactersState?.map(({ ...values }) => ({
         ...values,
@@ -70,7 +77,7 @@ const Play = () => {
         wasFound: false,
       }))
     );
-  };
+  }, [charactersState]);
 
   const openCard = ({ position, id }: AllNumberKeys) => {
     if (isBlockOnClick) {
@@ -86,27 +93,38 @@ const Play = () => {
     verifyMath(id);
   };
 
-  useEffect(() => {
-    setTimeout(() => {
-      closeAll();
-    }, 3000);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  useEffect(() => {
-    if (success === 6) {
-      history.push(routes.GAMEOVER);
+  const onPlay = (showIntructionsAgain: boolean) => {
+    if (showIntructionsAgain) {
+      setKey({ key: KEYSHOWINTRUCTIONS, value: "not" });
     }
-  }, [history, success]);
+    setPlay(true);
+  };
+  useEffect(() => {
+    if (play) {
+      setTimeout(() => {
+        closeAll();
+      }, 3000);
+    }
+    if (!showIntructions) {
+      setPlay(true);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [play, showIntructions]);
 
   return (
     <>
-      <div className="d-flex jc-space-between">
-        <h2 className="mb-1-5">{`Aciertos: ${success}`}</h2>
-        <h2 className="mb-1-5">{`Turnos: ${turns}`}</h2>
-      </div>
-      {charactersState && (
-        <GameBoard data={charactersState} onClickToCard={openCard} />
+      {showIntructions && !play ? (
+        <Intructions onClickPlay={onPlay} />
+      ) : (
+        <>
+          <div className="d-flex jc-space-between">
+            <h2 className="mb-1-5">{`Aciertos: ${success}`}</h2>
+            <h2 className="mb-1-5">{`Turnos: ${turns}`}</h2>
+          </div>
+          {charactersState && (
+            <GameBoard data={charactersState} onClickToCard={openCard} />
+          )}
+        </>
       )}
     </>
   );

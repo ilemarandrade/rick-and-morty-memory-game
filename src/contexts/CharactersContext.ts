@@ -8,6 +8,7 @@ interface IContext {
   turns: number;
   setTurns: (n: number) => void;
   isPlaying: boolean;
+  showIntructions: boolean;
 }
 const CharactersContext = createContext<IContext>({
   characters: null,
@@ -16,6 +17,7 @@ const CharactersContext = createContext<IContext>({
   turns: 0,
   setTurns: () => {},
   isPlaying: false,
+  showIntructions: false,
 });
 
 export const useCharactersState = () => {
