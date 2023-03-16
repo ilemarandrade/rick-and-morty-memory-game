@@ -41,7 +41,7 @@ const CharactersProvider = ({ children }: Props) => {
       value={{ characters, success, setSuccess, turns, setTurns }}
     >
       {(isFirstRender || isLoading) && <Loading isWelcome={isFirstRender} />}
-      {!isFirstRender && children}
+      {children}
     </CharactersContext.Provider>
   );
 };
