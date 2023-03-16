@@ -3,8 +3,18 @@ import { ICharacters } from "../models/endPointsModel";
 
 interface IContext {
   characters: ICharacters[] | null;
+  success: number;
+  setSuccess: (n: number) => void;
+  turns: number;
+  setTurns: (n: number) => void;
 }
-const CharactersContext = createContext<IContext>({ characters: null });
+const CharactersContext = createContext<IContext>({
+  characters: null,
+  success: 0,
+  setSuccess: () => {},
+  turns: 0,
+  setTurns: () => {},
+});
 
 export const useCharactersState = () => {
   const context = useContext(CharactersContext);
