@@ -2,13 +2,25 @@
 
 .layout {
   background: #1c1d3b;
-  padding: 24px;
-  padding-bottom: 0px;
+  padding: 16px 0px;
+  padding-bottom: 0px !important;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 .main {
   @extend %perfect-centered;
   align-items: initial;
-  min-height: calc(100vh - 276px);
   margin-top: 40px;
+  flex-grow: 1;
+}
+
+@media (min-width: #{App.$md}) {
+  .layout {
+    padding: 24px;
+  }
+  .main {
+    min-height: calc(100vh - 276px);
+    margin-top: 40px;
+  }
 }

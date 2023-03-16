@@ -1,6 +1,14 @@
+@use "../../App.scss";
+
 .root {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 16px;
-  margin-bottom: 48px;
+  margin-bottom: 56px;
+}
+
+@media (min-width: #{App.$sm}) {
+  .root {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }

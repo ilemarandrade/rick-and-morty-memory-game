@@ -1,9 +1,17 @@
 @use "../../App";
 
 .section {
-  min-width: 75%;
+  min-width: 100%;
   min-height: 100%;
-  padding: 36px 72px;
+  padding: 16px;
   background: #fffac2;
   border-radius: 16px 16px 0px 0px;
+}
+
+@media (min-width: #{App.$sm}) {
+  .section {
+    min-width: 780px;
+    min-height: 100%;
+    padding: 36px 72px;
+  }
 }

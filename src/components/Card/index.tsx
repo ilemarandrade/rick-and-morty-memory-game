@@ -1,5 +1,8 @@
 import classes from "./Card.module.scss";
 import rickyAndMorty from "../../assets/images/ricky_morty.png";
+import useMediaQuery from "../../hooks/useMediaQuery";
+import breakpointsValues from "../../constants/breakpointsValues";
+import { useCharactersState } from "../../contexts/CharactersContext";
 
 interface Props {
   img: string;
@@ -17,6 +20,10 @@ const Card = ({
   onClick,
   wasFound = false,
 }: Props) => {
+  const { isPlaying } = useCharactersState();
+  const isTablet = useMediaQuery((breakpoints: any) =>
+    breakpoints.down(breakpointsValues.md)
+  );
   return (
     <button
       className={`
@@ -28,10 +35,14 @@ const Card = ({
       {open ? (
         <>
           <img alt={name} src={img} />
-          <p className={classes.name} title={name}>
-            {name}
-          </p>
-          <p className={classes.origin}>{origin}</p>
+          {(!isTablet || !isPlaying) && (
+            <>
+              <p className={classes.name} title={name}>
+                {name}
+              </p>
+              <p className={classes.origin}>{origin}</p>
+            </>
+          )}
         </>
       ) : (
         <img src={rickyAndMorty} alt="ricky and morty" />
