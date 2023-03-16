@@ -11,6 +11,7 @@ interface Props {
 const CharactersProvider = ({ children }: Props) => {
   const history = useHistory();
   const { pathname } = useLocation();
+  const isPlaying = pathname === routes.PLAY;
   const [isFirstRender, setIsFirstRender] = useState(true);
   const { getCharacters, data: characters, isLoading } = useGetCharacters();
   const [success, setSuccess] = useState(0);
@@ -38,7 +39,7 @@ const CharactersProvider = ({ children }: Props) => {
   }, [pathname]);
   return (
     <CharactersContext.Provider
-      value={{ characters, success, setSuccess, turns, setTurns }}
+      value={{ characters, success, setSuccess, turns, setTurns, isPlaying }}
     >
       {(isFirstRender || isLoading) && <Loading isWelcome={isFirstRender} />}
       {children}
