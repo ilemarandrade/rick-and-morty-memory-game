@@ -1,4 +1,5 @@
 @use "../../App.scss";
+@use "../Button/Button.module.scss";
 
 .root {
   position: fixed;
@@ -7,5 +8,21 @@
   width: 100%;
   height: 100vh;
   background: #000000a6;
+  flex-direction: column;
   @extend %perfect-centered;
+}
+
+.greeting {
+  background: Button.$secondary-color;
+  margin-top: 1.5rem;
+  border-radius: 25px;
+  padding: 8px 16px;
+  width: max-content;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.is-welcome {
+  background: black !important;
 }

@@ -1,10 +1,17 @@
 import gifLoading from "../../assets/images/loading.gif";
 import classes from "./Loading.module.scss";
 
-const Loading = () => {
+interface Props {
+  isWelcome?: boolean;
+}
+
+const Loading = ({ isWelcome = false }: Props) => {
   return (
-    <div className={classes.root}>
+    <div className={`${classes.root} ${isWelcome && classes["is-welcome"]}`}>
       <img alt="loading" src={gifLoading} />
+      {isWelcome && (
+        <h1 className={classes.greeting}>Bienvenido a Ricky & Morty game</h1>
+      )}
     </div>
   );
 };
