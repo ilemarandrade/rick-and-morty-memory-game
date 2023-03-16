@@ -1,6 +1,12 @@
+import { useState } from "react";
 import Button from "../Button";
 
-const Intructions = () => {
+interface Props {
+  onClickPlay: (t: boolean) => void;
+}
+const Intructions = ({ onClickPlay }: Props) => {
+  const [showIntructionsAgain, setShowInstructionsAgain] = useState(false);
+
   return (
     <>
       <h1 className="ta-center">Intrucciones</h1>
@@ -16,11 +22,20 @@ const Intructions = () => {
         <li>Mientras menos intentos/turnos, más memoria tienes!</li>
       </ul>
       <div className="perfect-centered mb-1-5">
-        <input type="checkbox" id="miCheckbox" />
+        <input
+          type="checkbox"
+          id="miCheckbox"
+          checked={showIntructionsAgain}
+          onClick={() => setShowInstructionsAgain(!showIntructionsAgain)}
+        />
         <label htmlFor="miCheckbox">No volver a ver las instrucciones</label>
       </div>
       <div className="perfect-centered">
-        <Button label="Empezar" />
+        <Button
+          label="Empezar"
+          onClick={() => onClickPlay(showIntructionsAgain)}
+          component="button"
+        />
       </div>
     </>
   );
