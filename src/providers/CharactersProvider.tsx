@@ -21,7 +21,13 @@ const CharactersProvider = ({ children }: Props) => {
       history.push(routes.HOME);
     }
   }, [characters, getCharacters, history, pathname]);
-
+  useEffect(() => {
+    if (pathname !== routes.PLAY) {
+      setSuccess(0);
+    } else {
+      setTurns(0);
+    }
+  }, [pathname]);
   return (
     <CharactersContext.Provider
       value={{ characters, success, setSuccess, turns, setTurns }}
