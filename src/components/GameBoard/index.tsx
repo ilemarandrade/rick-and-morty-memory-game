@@ -1,4 +1,6 @@
+import { useMemo } from "react";
 import Card from "../Card";
+import { AllNumberKeys } from "../models/generics";
 import classes from "./GameBoard.module.scss";
 interface Props {
   data: {
@@ -7,25 +9,44 @@ interface Props {
     status: string;
     species: string;
     id: number;
-    onClick?: (id: number) => void;
+    onClick?: (data: AllNumberKeys) => void;
+    open?: boolean;
+    position?: number;
+    wasFound?: boolean;
   }[];
+  onClickToCard?: any;
 }
 
-const GameBoard = ({ data }: Props) => {
-  return (
-    <div className={classes.root}>
-      {data.map(({ name, image, status, species, id, onClick = () => {} }) => (
-        <Card
-          key={id}
-          name={name}
-          img={image}
-          open
-          origin={`${status} - ${species}`}
-          id={id}
-          onClick={() => onClick(id)}
-        />
-      ))}
-    </div>
+const GameBoard = ({ data, onClickToCard }: Props) => {
+  const cards = useMemo(
+    () => (
+      <>
+        {data.map(
+          ({
+            name,
+            image,
+            status,
+            species,
+            id,
+            open = true,
+            position = 0,
+            wasFound = false,
+          }) => (
+            <Card
+              key={id + position + name}
+              name={name}
+              img={image}
+              open={open}
+              origin={`${status} - ${species}`}
+              onClick={() => onClickToCard && onClickToCard({ id, position })}
+              wasFound={wasFound}
+            />
+          )
+        )}
+      </>
+    ),
+    [data, onClickToCard]
   );
+  return <div className={classes.root}>{cards}</div>;
 };
 export default GameBoard;

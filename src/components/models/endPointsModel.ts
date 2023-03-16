@@ -17,6 +17,7 @@ export interface ICharacters {
   episode: [string];
   url: string;
   created: string;
+  open?: boolean;
 }
 export interface IResponseCharactersEndpoint {
   info: {

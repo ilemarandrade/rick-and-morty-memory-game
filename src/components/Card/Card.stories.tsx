@@ -16,9 +16,8 @@ CardOpen.args = {
   name: "Beth Smith",
   origin: "Alive - Human",
   open: true,
-  id: 1,
-  onClick: (id) => {
-    alert(id);
+  onClick: () => {
+    alert("hola");
   },
 };
 
@@ -27,8 +26,7 @@ CardClose.args = {
   img: "https://placekitten.com/200/200",
   name: "Ilemar Andrade",
   origin: "Alive - Human",
-  id: 2,
-  onClick: (id) => {
-    alert(id);
+  onClick: () => {
+    alert("hola");
   },
 };

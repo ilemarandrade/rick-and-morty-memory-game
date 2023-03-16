@@ -5,7 +5,7 @@ import Section from "./index";
 import Card from "../Card";
 
 export default {
-  title: "Components/Section",
+  title: "Example/Section",
   component: Section,
 } as ComponentMeta<typeof Section>;
 
@@ -24,8 +24,8 @@ SectionTemplate.args = {
           origin: "Alive - Human",
           open: true,
           id: 1,
-          onClick: (id) => {
-            alert(id);
+          onClick: () => {
+            alert("hola");
           },
         }}
       />
