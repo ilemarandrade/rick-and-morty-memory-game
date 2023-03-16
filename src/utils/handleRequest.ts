@@ -1,20 +1,20 @@
 import { AxiosRequestConfig, Method } from "axios";
 import axiosInstance from "./axiosInstance";
-
-interface IhandleRequest {
+interface IhandleRequest<T> {
   method: Method;
   url: string;
   config?: AxiosRequestConfig;
-  onSuccess: (res: unknown) => void;
-  onError: (res: unknown) => void;
+  onSuccess: (res: { data: T }) => void;
+  onError: (res: { data: T }) => void;
 }
-const handleRequest = ({
+
+const handleRequest = <T>({
   method,
   url,
   config,
   onSuccess,
   onError,
-}: IhandleRequest) => {
+}: IhandleRequest<T>) => {
   axiosInstance({
     method,
     url,
