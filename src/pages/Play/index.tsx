@@ -82,6 +82,8 @@ const Play = () => {
     setTimeout(() => {
       closeAll();
     }, 3000);
+    setTurns(0);
+    setSuccess(0);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
