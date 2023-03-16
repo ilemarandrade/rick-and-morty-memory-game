@@ -5,19 +5,33 @@
   flex-direction: column;
   @extend %perfect-centered;
   img {
-    width: 500px;
+    width: 250px;
+    margin-bottom: 1rem;
   }
 }
 
 .subtitle {
   background: #d8e054;
   border-radius: 25px;
-  padding: 8px 16px;
+  padding: 4px 8px;
   width: max-content;
   h1 {
     font-weight: 700;
-    font-size: 20px;
-    line-height: 24px;
+    font-size: 16px;
+    line-height: 18px;
     margin: 0;
+  }
+}
+@media (min-width: #{App.$sm}) {
+  .header {
+    img {
+      width: 500px;
+    }
+  }
+  .subtitle {
+    h1 {
+      font-size: 20px;
+      line-height: 24px;
+    }
   }
 }
