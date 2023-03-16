@@ -10,6 +10,7 @@
   background: #000000a6;
   flex-direction: column;
   @extend %perfect-centered;
+  z-index: 2;
 }
 
 .greeting {
