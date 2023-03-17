@@ -26,7 +26,7 @@ const Intructions = ({ onClickPlay }: Props) => {
           type="checkbox"
           id="miCheckbox"
           checked={showIntructionsAgain}
-          onClick={() => setShowInstructionsAgain(!showIntructionsAgain)}
+          onChange={() => setShowInstructionsAgain(!showIntructionsAgain)}
         />
         <label htmlFor="miCheckbox">No volver a ver las instrucciones</label>
       </div>

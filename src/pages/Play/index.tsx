@@ -5,7 +5,7 @@ import { ICharacters } from "../../models/endPointsModel";
 import { AllNumberKeys } from "../../models/generics";
 import routes from "../../constants/routes";
 import { useCharactersState } from "../../contexts/CharactersContext";
-import Intructions from "../../components/Intructions";
+import Instructions from "../../components/Instructions";
 import { KEYSHOWINTRUCTIONS, setKey } from "../../utils/localStorage";
 
 const randomCharacters = (characters: ICharacters[] | null) => {
@@ -116,7 +116,7 @@ const Play = () => {
   return (
     <>
       {showIntructions && !play ? (
-        <Intructions onClickPlay={onPlay} />
+        <Instructions onClickPlay={onPlay} />
       ) : (
         <>
           <div className="d-flex jc-space-between">
