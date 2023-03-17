@@ -1,9 +1,13 @@
-import { lazy, Suspense } from "react";
+import { lazy, LazyExoticComponent, Suspense } from "react";
 import { Route, Switch } from "react-router";
-import Loading from "../components/Loading";
 import routes from "../constants/routes";
+interface IRoutesPublic {
+  component: LazyExoticComponent<() => JSX.Element>;
+  path: string;
+  exact?: boolean;
+}
 
-const routesPublic = [
+const routesPublic: IRoutesPublic[] = [
   {
     component: lazy(() => import("../pages/Home")),
     path: routes.HOME,
@@ -18,15 +22,17 @@ const routesPublic = [
     path: routes.GAMEOVER,
   },
 ];
+
 const Routes = () => {
   return (
     <Switch>
       <Suspense fallback="...loading">
-        {routesPublic.map(({ ...args }) => (
-          <Route {...{ ...args }} key={args.path} />
+        {routesPublic.map(({ path, component, exact }) => (
+          <Route {...{ path, component, exact }} key={path} />
         ))}
       </Suspense>
     </Switch>
   );
 };
+
 export default Routes;

@@ -5,6 +5,7 @@ import Header from "./index";
 describe("<Header />", () => {
   it("Should show the Header", () => {
     render(<Header />);
+
     expect(
       screen.getByRole("heading", { name: "Juego de memoria" })
     ).toBeInTheDocument();

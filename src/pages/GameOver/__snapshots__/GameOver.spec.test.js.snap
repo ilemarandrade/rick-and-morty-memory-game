@@ -26,8 +26,7 @@ exports[`GameOver should render without errors 1`] = `
         Repetir
       </a>
       <a
-        aria-current="page"
-        class="button-base button-color-secondary active"
+        class="button-base button-color-secondary"
         color="secondary"
         href="/"
       >

@@ -1,4 +1,4 @@
-export const KEYSHOWINTRUCTIONS = "show-intructions-key";
+export const KEY_SHOW_INTRUCTIONS = "show-intructions-key";
 
 export const getKey = (key: string) => localStorage.getItem(key);
 

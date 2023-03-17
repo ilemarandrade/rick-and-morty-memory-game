@@ -1,11 +1,11 @@
 import gifLoading from "../../assets/images/loading.gif";
 import classes from "./Loading.module.scss";
 
-interface Props {
+interface ILoading {
   isWelcome?: boolean;
 }
 
-const Loading = ({ isWelcome = false }: Props) => {
+const Loading = ({ isWelcome = false }: ILoading) => {
   return (
     <div className={`${classes.root} ${isWelcome && classes["is-welcome"]}`}>
       <img alt="loading" src={gifLoading} />

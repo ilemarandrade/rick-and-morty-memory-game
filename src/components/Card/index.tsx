@@ -2,9 +2,9 @@ import classes from "./Card.module.scss";
 import rickyAndMorty from "../../assets/images/ricky_morty.png";
 import useMediaQuery from "../../hooks/useMediaQuery";
 import breakpointsValues from "../../constants/breakpointsValues";
-import { useCharactersState } from "../../contexts/CharactersContext";
+import { useGameControlState } from "../../contexts/GameControlContext";
 
-interface Props {
+interface ICard {
   img: string;
   name: string;
   origin: string;
@@ -19,8 +19,8 @@ const Card = ({
   open = false,
   onClick,
   wasFound = false,
-}: Props) => {
-  const { isPlaying } = useCharactersState();
+}: ICard) => {
+  const { isPlaying } = useGameControlState();
   const isTablet = useMediaQuery((breakpoints: any) =>
     breakpoints.down(breakpointsValues.md)
   );

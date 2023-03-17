@@ -1,14 +1,15 @@
 import { ReactNode } from "react";
 import { BrowserRouter } from "react-router-dom";
-import CharactersProvider from "../providers/CharactersProvider";
+import GameControlProvider from "../providers/GameControlProvider";
 
-interface Props {
+interface IProviders {
   children?: ReactNode;
 }
-const Providers = ({ children }: Props) => {
+
+const Providers = ({ children }: IProviders) => {
   return (
     <BrowserRouter>
-      <CharactersProvider>{children}</CharactersProvider>
+      <GameControlProvider>{children}</GameControlProvider>
     </BrowserRouter>
   );
 };

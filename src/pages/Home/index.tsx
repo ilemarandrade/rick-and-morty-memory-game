@@ -1,18 +1,19 @@
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Button from "../../components/Button";
 import GameBoard from "../../components/GameBoard";
 import routes from "../../constants/routes";
-import { useCharactersState } from "../../contexts/CharactersContext";
 import classes from "./Home.module.scss";
+import { useGameControlState } from "../../contexts/GameControlContext";
 
 const Home = () => {
-  const { characters } = useCharactersState();
+  const { characters } = useGameControlState();
+
   return (
     <>
       <h2 className="mb-1-5">Personajes</h2>
-      {characters && <GameBoard data={characters} />}
+      {characters.length && <GameBoard cardsData={characters} />}
       <div className={classes.containerButton}>
-        <Button label="Jugar" component={NavLink} to={routes.PLAY} />
+        <Button label="Jugar" component={Link} to={routes.PLAY} />
       </div>
     </>
   );

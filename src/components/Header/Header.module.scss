@@ -1,9 +1,10 @@
-@use "../../App";
+@use "../../root/App";
 
 .header {
+  @extend %perfect-centered;
   width: 100%;
   flex-direction: column;
-  @extend %perfect-centered;
+
   img {
     width: 250px;
     margin-bottom: 1rem;
@@ -15,6 +16,7 @@
   border-radius: 25px;
   padding: 4px 12px;
   width: max-content;
+
   h1 {
     font-weight: 700;
     font-size: 16px;
