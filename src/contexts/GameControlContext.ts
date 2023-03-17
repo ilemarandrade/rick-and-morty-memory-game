@@ -3,16 +3,16 @@ import { ICharacters } from "../models/endPointsModel";
 
 interface IContext {
   characters: ICharacters[] | null;
-  success: number;
-  setSuccess: (n: number) => void;
+  matchesGot: number;
+  setMatchesGot: (n: number) => void;
   turns: number;
   setTurns: (n: number) => void;
 }
 
 const GameControlContext = createContext<IContext>({
   characters: null,
-  success: 0,
-  setSuccess: () => {},
+  matchesGot: 0,
+  setMatchesGot: () => {},
   turns: 0,
   setTurns: () => {},
 });
