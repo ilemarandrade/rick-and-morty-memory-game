@@ -9,10 +9,12 @@ import Intructions from "../../components/Intructions";
 import { KEYSHOWINTRUCTIONS, setKey } from "../../utils/localStorage";
 
 const randomCharacters = (characters: ICharacters[] | null) => {
-  if (characters) {
-    return [...characters?.slice(0, 6), ...characters?.slice(0, 6)]?.sort(
-      () => 0.5 - Math.random()
-    );
+  const randomAllCharacters = characters?.sort(() => 0.5 - Math.random());
+  if (randomAllCharacters) {
+    return [
+      ...randomAllCharacters?.slice(0, 6),
+      ...randomAllCharacters?.slice(0, 6),
+    ]?.sort(() => 0.5 - Math.random());
   }
   return;
 };
