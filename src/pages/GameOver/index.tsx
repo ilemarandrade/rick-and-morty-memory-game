@@ -1,10 +1,12 @@
 import { NavLink } from "react-router-dom";
 import Button from "../../components/Button";
 import routes from "../../constants/routes";
-import { useCharactersState } from "../../contexts/CharactersContext";
+import { useGameControlState } from "../../contexts/GameControlContext";
 import classes from "./GameOver.module.scss";
+
 const GameOver = () => {
-  const { turns } = useCharactersState();
+  const { turns } = useGameControlState();
+
   return (
     <div className={classes.root}>
       <h2 className="mb-1 font-primary">¡Felicitaciones!</h2>
