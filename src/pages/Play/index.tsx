@@ -97,8 +97,7 @@ const Play = () => {
         wasFound: false,
       }))
     );
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [cardsOnTheBoard, setCardsOnTheBoard]);
 
   useEffect(() => {
     if (!showIntructions) {
