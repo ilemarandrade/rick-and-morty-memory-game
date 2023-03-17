@@ -17,7 +17,7 @@ const GameControlContext = createContext<IContext>({
   setTurns: () => {},
 });
 
-export const GameControlState = () => {
+export const useGameControlState = () => {
   const context = useContext(GameControlContext);
 
   if (!context) {
