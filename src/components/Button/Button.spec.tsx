@@ -1,6 +1,6 @@
 import "@testing-library/jest-dom";
 import Button from "./index";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { render, screen, fireEvent } from "../../__test__/utils/customRender";
 
 const propsAsAnchor = {
@@ -9,10 +9,10 @@ const propsAsAnchor = {
   component: "a",
 };
 
-const propsAsNavLink = {
-  label: "Label With NavLink",
+const propsAsLink = {
+  label: "Label With Link",
   to: "/iAmTo",
-  component: NavLink,
+  component: Link,
 };
 
 const propsAsButton = {
@@ -45,11 +45,11 @@ describe("<Button />", () => {
     );
   });
 
-  it("Should show the component as <NavLink />", () => {
-    render(<Button {...{ ...propsAsNavLink }} />);
-    expect(screen.getByText(propsAsNavLink.label)).toBeInTheDocument();
-    expect(screen.getByRole("link")).toHaveTextContent(propsAsNavLink.label);
-    expect(screen.getByRole("link")).toHaveAttribute("href", propsAsNavLink.to);
+  it("Should show the component as <Link />", () => {
+    render(<Button {...{ ...propsAsLink }} />);
+    expect(screen.getByText(propsAsLink.label)).toBeInTheDocument();
+    expect(screen.getByRole("link")).toHaveTextContent(propsAsLink.label);
+    expect(screen.getByRole("link")).toHaveAttribute("href", propsAsLink.to);
   });
 
   it("Should show the component as <button />", () => {
