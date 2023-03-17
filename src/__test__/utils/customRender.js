@@ -1,12 +1,12 @@
 import React from "react";
 import { render } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
-import CharactersProvider from "../../providers/CharactersProvider";
+import GameControlProvider from "../../providers/GameControlProvider";
 
 const AllTheProviders = ({ children }) => {
   return (
     <BrowserRouter>
-      <CharactersProvider>{children}</CharactersProvider>
+      <GameControlProvider>{children}</GameControlProvider>
     </BrowserRouter>
   );
 };
