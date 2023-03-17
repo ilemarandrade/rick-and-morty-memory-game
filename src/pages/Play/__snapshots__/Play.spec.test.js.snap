@@ -1,0 +1,317 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Play should render without errors and game board 1`] = `
+<div>
+  <div
+    class="d-flex jc-space-between"
+  >
+    <h2
+      class="mb-1-5"
+    >
+      Aciertos: 0
+    </h2>
+    <h2
+      class="mb-1-5"
+    >
+      Turnos: 0
+    </h2>
+  </div>
+  <div
+    class="root"
+  >
+    <button
+      class="
+      card-open card "
+    >
+      <img
+        alt="Rick Sanchez"
+        src="https://placekitten.com/200/200"
+      />
+      <p
+        class="name"
+        title="Rick Sanchez"
+      >
+        Rick Sanchez
+      </p>
+      <p
+        class="origin"
+      >
+        Alive - Human
+      </p>
+    </button>
+    <button
+      class="
+      card-open card "
+    >
+      <img
+        alt="Rick Sanchez"
+        src="https://placekitten.com/200/200"
+      />
+      <p
+        class="name"
+        title="Rick Sanchez"
+      >
+        Rick Sanchez
+      </p>
+      <p
+        class="origin"
+      >
+        Alive - Human
+      </p>
+    </button>
+    <button
+      class="
+      card-open card "
+    >
+      <img
+        alt="Rick Sanchez"
+        src="https://placekitten.com/200/200"
+      />
+      <p
+        class="name"
+        title="Rick Sanchez"
+      >
+        Rick Sanchez
+      </p>
+      <p
+        class="origin"
+      >
+        Alive - Human
+      </p>
+    </button>
+    <button
+      class="
+      card-open card "
+    >
+      <img
+        alt="Rick Sanchez"
+        src="https://placekitten.com/200/200"
+      />
+      <p
+        class="name"
+        title="Rick Sanchez"
+      >
+        Rick Sanchez
+      </p>
+      <p
+        class="origin"
+      >
+        Alive - Human
+      </p>
+    </button>
+    <button
+      class="
+      card-open card "
+    >
+      <img
+        alt="Rick Sanchez"
+        src="https://placekitten.com/200/200"
+      />
+      <p
+        class="name"
+        title="Rick Sanchez"
+      >
+        Rick Sanchez
+      </p>
+      <p
+        class="origin"
+      >
+        Alive - Human
+      </p>
+    </button>
+    <button
+      class="
+      card-open card "
+    >
+      <img
+        alt="Rick Sanchez"
+        src="https://placekitten.com/200/200"
+      />
+      <p
+        class="name"
+        title="Rick Sanchez"
+      >
+        Rick Sanchez
+      </p>
+      <p
+        class="origin"
+      >
+        Alive - Human
+      </p>
+    </button>
+    <button
+      class="
+      card-open card "
+    >
+      <img
+        alt="Rick Sanchez"
+        src="https://placekitten.com/200/200"
+      />
+      <p
+        class="name"
+        title="Rick Sanchez"
+      >
+        Rick Sanchez
+      </p>
+      <p
+        class="origin"
+      >
+        Alive - Human
+      </p>
+    </button>
+    <button
+      class="
+      card-open card "
+    >
+      <img
+        alt="Rick Sanchez"
+        src="https://placekitten.com/200/200"
+      />
+      <p
+        class="name"
+        title="Rick Sanchez"
+      >
+        Rick Sanchez
+      </p>
+      <p
+        class="origin"
+      >
+        Alive - Human
+      </p>
+    </button>
+    <button
+      class="
+      card-open card "
+    >
+      <img
+        alt="Rick Sanchez"
+        src="https://placekitten.com/200/200"
+      />
+      <p
+        class="name"
+        title="Rick Sanchez"
+      >
+        Rick Sanchez
+      </p>
+      <p
+        class="origin"
+      >
+        Alive - Human
+      </p>
+    </button>
+    <button
+      class="
+      card-open card "
+    >
+      <img
+        alt="Rick Sanchez"
+        src="https://placekitten.com/200/200"
+      />
+      <p
+        class="name"
+        title="Rick Sanchez"
+      >
+        Rick Sanchez
+      </p>
+      <p
+        class="origin"
+      >
+        Alive - Human
+      </p>
+    </button>
+    <button
+      class="
+      card-open card "
+    >
+      <img
+        alt="Rick Sanchez"
+        src="https://placekitten.com/200/200"
+      />
+      <p
+        class="name"
+        title="Rick Sanchez"
+      >
+        Rick Sanchez
+      </p>
+      <p
+        class="origin"
+      >
+        Alive - Human
+      </p>
+    </button>
+    <button
+      class="
+      card-open card "
+    >
+      <img
+        alt="Rick Sanchez"
+        src="https://placekitten.com/200/200"
+      />
+      <p
+        class="name"
+        title="Rick Sanchez"
+      >
+        Rick Sanchez
+      </p>
+      <p
+        class="origin"
+      >
+        Alive - Human
+      </p>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Play should render without errors and show the instructions 1`] = `
+<div>
+  <h1
+    class="ta-center"
+  >
+    Intrucciones
+  </h1>
+  <ul>
+    <li>
+      Tendrás 3 segundos para memorizar las cartas.
+    </li>
+    <li>
+      Una vez volteadas puedes seleccionar 2 cartas.
+    </li>
+    <li>
+      Si las cartas abiertas son iguales te sumará puntos a favor.
+    </li>
+    <li>
+      Si las cartas son diferentes se colocarán como estaban y podrás volver a elegir otras dos más.
+    </li>
+    <li>
+      Procura hacerlo la menor cantidad de intentos.
+    </li>
+    <li>
+      Mientras menos intentos/turnos, más memoria tienes!
+    </li>
+  </ul>
+  <div
+    class="perfect-centered mb-1-5"
+  >
+    <input
+      id="miCheckbox"
+      type="checkbox"
+    />
+    <label
+      for="miCheckbox"
+    >
+      No volver a ver las instrucciones
+    </label>
+  </div>
+  <div
+    class="perfect-centered"
+  >
+    <button
+      class="button-base button-color-primary"
+      color="primary"
+    >
+      Empezar
+    </button>
+  </div>
+</div>
+`;
