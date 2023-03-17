@@ -1,0 +1,266 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home should render without errors 1`] = `
+<div>
+  <h2
+    class="mb-1-5"
+  >
+    Personajes
+  </h2>
+  <div
+    class="root"
+  >
+    <button
+      class="
+      card-open card "
+    >
+      <img
+        alt="Rick Sanchez"
+        src="https://placekitten.com/200/200"
+      />
+      <p
+        class="name"
+        title="Rick Sanchez"
+      >
+        Rick Sanchez
+      </p>
+      <p
+        class="origin"
+      >
+        Alive - Human
+      </p>
+    </button>
+    <button
+      class="
+      card-open card "
+    >
+      <img
+        alt="Rick Sanchez"
+        src="https://placekitten.com/200/200"
+      />
+      <p
+        class="name"
+        title="Rick Sanchez"
+      >
+        Rick Sanchez
+      </p>
+      <p
+        class="origin"
+      >
+        Alive - Human
+      </p>
+    </button>
+    <button
+      class="
+      card-open card "
+    >
+      <img
+        alt="Rick Sanchez"
+        src="https://placekitten.com/200/200"
+      />
+      <p
+        class="name"
+        title="Rick Sanchez"
+      >
+        Rick Sanchez
+      </p>
+      <p
+        class="origin"
+      >
+        Alive - Human
+      </p>
+    </button>
+    <button
+      class="
+      card-open card "
+    >
+      <img
+        alt="Rick Sanchez"
+        src="https://placekitten.com/200/200"
+      />
+      <p
+        class="name"
+        title="Rick Sanchez"
+      >
+        Rick Sanchez
+      </p>
+      <p
+        class="origin"
+      >
+        Alive - Human
+      </p>
+    </button>
+    <button
+      class="
+      card-open card "
+    >
+      <img
+        alt="Rick Sanchez"
+        src="https://placekitten.com/200/200"
+      />
+      <p
+        class="name"
+        title="Rick Sanchez"
+      >
+        Rick Sanchez
+      </p>
+      <p
+        class="origin"
+      >
+        Alive - Human
+      </p>
+    </button>
+    <button
+      class="
+      card-open card "
+    >
+      <img
+        alt="Rick Sanchez"
+        src="https://placekitten.com/200/200"
+      />
+      <p
+        class="name"
+        title="Rick Sanchez"
+      >
+        Rick Sanchez
+      </p>
+      <p
+        class="origin"
+      >
+        Alive - Human
+      </p>
+    </button>
+    <button
+      class="
+      card-open card "
+    >
+      <img
+        alt="Rick Sanchez"
+        src="https://placekitten.com/200/200"
+      />
+      <p
+        class="name"
+        title="Rick Sanchez"
+      >
+        Rick Sanchez
+      </p>
+      <p
+        class="origin"
+      >
+        Alive - Human
+      </p>
+    </button>
+    <button
+      class="
+      card-open card "
+    >
+      <img
+        alt="Rick Sanchez"
+        src="https://placekitten.com/200/200"
+      />
+      <p
+        class="name"
+        title="Rick Sanchez"
+      >
+        Rick Sanchez
+      </p>
+      <p
+        class="origin"
+      >
+        Alive - Human
+      </p>
+    </button>
+    <button
+      class="
+      card-open card "
+    >
+      <img
+        alt="Rick Sanchez"
+        src="https://placekitten.com/200/200"
+      />
+      <p
+        class="name"
+        title="Rick Sanchez"
+      >
+        Rick Sanchez
+      </p>
+      <p
+        class="origin"
+      >
+        Alive - Human
+      </p>
+    </button>
+    <button
+      class="
+      card-open card "
+    >
+      <img
+        alt="Rick Sanchez"
+        src="https://placekitten.com/200/200"
+      />
+      <p
+        class="name"
+        title="Rick Sanchez"
+      >
+        Rick Sanchez
+      </p>
+      <p
+        class="origin"
+      >
+        Alive - Human
+      </p>
+    </button>
+    <button
+      class="
+      card-open card "
+    >
+      <img
+        alt="Rick Sanchez"
+        src="https://placekitten.com/200/200"
+      />
+      <p
+        class="name"
+        title="Rick Sanchez"
+      >
+        Rick Sanchez
+      </p>
+      <p
+        class="origin"
+      >
+        Alive - Human
+      </p>
+    </button>
+    <button
+      class="
+      card-open card "
+    >
+      <img
+        alt="Rick Sanchez"
+        src="https://placekitten.com/200/200"
+      />
+      <p
+        class="name"
+        title="Rick Sanchez"
+      >
+        Rick Sanchez
+      </p>
+      <p
+        class="origin"
+      >
+        Alive - Human
+      </p>
+    </button>
+  </div>
+  <div
+    class="containerButton"
+  >
+    <a
+      class="button-base button-color-primary"
+      color="primary"
+      href="/play"
+    >
+      Jugar
+    </a>
+  </div>
+</div>
+`;
