@@ -15,9 +15,7 @@ const propsAsNavLink = {
 };
 const propsAsButton = {
   label: "Label to Button",
-  onClick: jest.fn(() => {
-    console.log("llamada");
-  }),
+  onClick: jest.fn(() => {}),
 };
 describe("<Button />", () => {
   describe("Should show variants buttons", () => {
