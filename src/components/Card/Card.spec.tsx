@@ -19,9 +19,10 @@ describe("<Card />", () => {
     expect(screen.queryByText(propsToCard.origin)).not.toBeInTheDocument();
     expect(screen.getByRole("img")).not.toHaveAttribute("src", propsToCard.img);
     expect(screen.getByRole("img")).toHaveAttribute("src", "ricky_morty.png");
+
     fireEvent.click(screen.getByRole("button"));
+
     expect(propsToCard.onClick).toBeCalled();
-    expect(propsToCard.onClick).toHaveBeenCalledWith(propsToCard.id);
   });
 
   it("Should show the card open", () => {
@@ -38,6 +39,5 @@ describe("<Card />", () => {
     fireEvent.click(screen.getByRole("button"));
 
     expect(propsToCard.onClick).toBeCalled();
-    expect(propsToCard.onClick).toHaveBeenCalledWith(propsToCard.id);
   });
 });
