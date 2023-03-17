@@ -1,6 +1,4 @@
-import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-
 import Section from "./index";
 import Card from "../Card";
 

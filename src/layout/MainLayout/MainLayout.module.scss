@@ -1,4 +1,4 @@
-@use "../../App";
+@use "../../root/App";
 
 .layout {
   background: #1c1d3b;
@@ -6,6 +6,7 @@
   padding-bottom: 0px;
   min-height: 100vh;
 }
+
 .main {
   @extend %perfect-centered;
   align-items: initial;

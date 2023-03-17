@@ -1,7 +1,7 @@
 import classes from "./Card.module.scss";
 import rickyAndMorty from "../../assets/images/ricky_morty.png";
 
-interface Props {
+interface ICard {
   img: string;
   name: string;
   origin: string;
@@ -16,7 +16,7 @@ const Card = ({
   open = false,
   onClick,
   wasFound = false,
-}: Props) => {
+}: ICard) => {
   return (
     <button
       className={`
