@@ -6,7 +6,7 @@ import {
 import handleRequest from "../../utils/handleRequest";
 
 const useGetCharacters = () => {
-  const [data, setData] = useState<ICharacters[] | null>(null);
+  const [data, setData] = useState<ICharacters[] | void[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const getCharacters = useCallback(async () => {
     setIsLoading(true);

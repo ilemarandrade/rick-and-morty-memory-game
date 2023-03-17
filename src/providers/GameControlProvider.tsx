@@ -23,9 +23,9 @@ const GameControlProvider = ({ children }: Props) => {
   // UseEffect  with the purpose of obtaining the characters
   // and avoid showing disallowed views when the characters do not exist
   useEffect(() => {
-    if (pathname === routes.HOME && !characters) {
+    if (pathname === routes.HOME && !characters.length) {
       getCharacters();
-    } else if (pathname !== routes.HOME && !characters) {
+    } else if (pathname !== routes.HOME && !characters.length) {
       history.push(routes.HOME);
     }
   }, [characters, getCharacters, history, isFirstRender, pathname]);

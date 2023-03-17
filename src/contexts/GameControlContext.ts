@@ -2,7 +2,7 @@ import { createContext, useContext } from "react";
 import { ICharacters } from "../models/endPointsModel";
 
 interface IContext {
-  characters: ICharacters[] | null;
+  characters: ICharacters[] | void[];
   matchesGot: number;
   setMatchesGot: (n: number) => void;
   turns: number;
@@ -10,7 +10,7 @@ interface IContext {
 }
 
 const GameControlContext = createContext<IContext>({
-  characters: null,
+  characters: [],
   matchesGot: 0,
   setMatchesGot: () => {},
   turns: 0,
