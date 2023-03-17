@@ -67,3 +67,11 @@
     height: 183px;
   }
 }
+
+@media (max-width: 424px) {
+  .card {
+    padding: 8px;
+    width: 28vw;
+    min-height: 28vw;
+  }
+}
