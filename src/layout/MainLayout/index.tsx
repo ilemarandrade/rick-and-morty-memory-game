@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 import Header from "../../components/Header";
 import classes from "./MainLayout.module.scss";
+
 interface IMainLayout {
   children?: ReactNode;
 }
