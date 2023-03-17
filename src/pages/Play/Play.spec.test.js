@@ -1,5 +1,5 @@
-import { useCharactersState } from "../../contexts/CharactersContext";
-import { KEYSHOWINTRUCTIONS, setKey } from "../../utils/localStorage";
+import { useGameControlState } from "../../contexts/GameControlContext";
+import { KEY_SHOW_INTRUCTIONS, setKey } from "../../utils/localStorage";
 import { render, screen, waitFor } from "../../__test__/utils/customRender";
 import Play from "./index";
 
@@ -15,11 +15,11 @@ describe("Play", () => {
     });
     expect(container).toMatchSnapshot();
   });
-  it("should render without errors and game board", async () => {
-    setKey({ key: KEYSHOWINTRUCTIONS, value: "not" });
+  it("should render without errors and show game board", async () => {
+    setKey({ key: KEY_SHOW_INTRUCTIONS, value: "not" });
 
     const WrapperToWaitCharacters = ({ children }) => {
-      const { characters } = useCharactersState();
+      const { characters } = useGameControlState();
       return <>{characters && children}</>;
     };
 
