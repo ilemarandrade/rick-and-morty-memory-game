@@ -2,7 +2,7 @@ import { createContext, useContext } from "react";
 import { ICharacters } from "../models/endPointsModel";
 
 interface IContext {
-  characters: ICharacters[] | void[];
+  characters: ICharacters[];
   matchesGot: number;
   setMatchesGot: (n: number) => void;
   turns: number;
