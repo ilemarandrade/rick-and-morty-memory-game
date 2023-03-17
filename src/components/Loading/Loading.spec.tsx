@@ -5,6 +5,7 @@ import Loading from "./index";
 describe("<Loading />", () => {
   it("Should show the Loading with message of welcome", () => {
     render(<Loading isWelcome />);
+
     expect(screen.getByAltText("loading")).toBeInTheDocument();
     expect(screen.getByAltText("loading")).toHaveAttribute(
       "src",
@@ -14,8 +15,10 @@ describe("<Loading />", () => {
       screen.getByText("Bienvenido a Ricky & Morty game")
     ).toBeInTheDocument();
   });
+
   it("Should show the Loading", () => {
     render(<Loading />);
+
     expect(screen.getByAltText("loading")).toBeInTheDocument();
     expect(screen.getByAltText("loading")).toHaveAttribute(
       "src",

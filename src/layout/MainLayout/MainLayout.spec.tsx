@@ -9,6 +9,7 @@ describe("<MainLayout />", () => {
         <div>I am a children</div>
       </MainLayout>
     );
+
     expect(screen.getByText("I am a children")).toBeInTheDocument();
     expect(
       screen.getByRole("heading", { name: "Juego de memoria" })

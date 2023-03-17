@@ -1,117 +1,125 @@
 import { useCallback, useEffect, useState } from "react";
 import { useHistory } from "react-router";
 import GameBoard from "../../components/GameBoard";
-import { ICharacters } from "../../models/endPointsModel";
 import { AllNumberKeys } from "../../models/generics";
 import routes from "../../constants/routes";
-import { useCharactersState } from "../../contexts/CharactersContext";
 import Instructions from "../../components/Instructions";
-import { KEYSHOWINTRUCTIONS, setKey } from "../../utils/localStorage";
+import { KEY_SHOW_INTRUCTIONS, setKey } from "../../utils/localStorage";
+import { useGameControlState } from "../../contexts/GameControlContext";
+import useCardsOnTheBoard from "../../hooks/useCardsOnTheBoard";
 
-const randomCharacters = (characters: ICharacters[] | null) => {
-  const randomAllCharacters = characters?.sort(() => 0.5 - Math.random());
-  if (randomAllCharacters) {
-    return [
-      ...randomAllCharacters?.slice(0, 6),
-      ...randomAllCharacters?.slice(0, 6),
-    ]?.sort(() => 0.5 - Math.random());
-  }
-  return;
-};
+const MAX_CARD_MATCHES = 5;
+const TIME_WHILE_COMPARING = 1000;
+const TIME_TO_CLOSE_ALL_CARDS = 3000;
 
 const Play = () => {
   const history = useHistory();
-  const { characters, success, setSuccess, turns, setTurns, showIntructions } =
-    useCharactersState();
+  const {
+    characters,
+    matchesGot,
+    setMatchesGot,
+    turns,
+    setTurns,
+    showIntructions,
+  } = useGameControlState();
+
   const [play, setPlay] = useState(false);
   const [isBlockOnClick, setIsBlockOnClick] = useState(false);
-  const [cardOpen, setCardOpen] = useState<number | false>(false);
-  const [charactersState, setCharactersState] = useState(() => {
-    const value = randomCharacters(characters)?.map(({ ...keys }, index) => ({
-      ...keys,
-      open: true,
-      position: index,
-    }));
-    return value;
-  });
-  const verifyMath = (id: number) => {
-    if (!cardOpen) {
-      setCardOpen(id);
-      return;
-    } else {
-      setIsBlockOnClick(true);
-      setTimeout(() => {
-        if (cardOpen === id) {
-          setCharactersState((prev) =>
-            prev?.map((currentCharacter) =>
-              currentCharacter.id === id
-                ? {
-                    ...currentCharacter,
-                    wasFound: true,
-                  }
-                : currentCharacter
-            )
-          );
-          if (success === 5) {
-            history.push(routes.GAMEOVER);
-          } else {
-            setSuccess(success + 1);
-          }
-        } else {
-          setCharactersState((prev) =>
-            prev?.map((currentCharacter) => ({
-              ...currentCharacter,
-              open: false,
-            }))
-          );
+  const [firstOpenCard, setFirstOpenCard] = useState<number | false>(false);
+  const [cardsOnTheBoard, setCardsOnTheBoard] = useCardsOnTheBoard(characters);
+
+  const verifyMatch = (id: number) => {
+    setIsBlockOnClick(true);
+    setTimeout(() => {
+      if (firstOpenCard === id) {
+        setCardsOnTheBoard((prev) =>
+          prev.map((currentCharacter) =>
+            currentCharacter.id === id
+              ? {
+                  ...currentCharacter,
+                  wasFound: true,
+                }
+              : currentCharacter
+          )
+        );
+        setMatchesGot(matchesGot + 1);
+        if (matchesGot === MAX_CARD_MATCHES) {
+          history.push(routes.GAMEOVER);
         }
-        setCardOpen(false);
-        setIsBlockOnClick(false);
-        setTurns(turns + 1);
-      }, 1000);
-    }
+      } else {
+        setCardsOnTheBoard((prev) =>
+          prev.map((currentCharacter) => ({
+            ...currentCharacter,
+            open: false,
+          }))
+        );
+      }
+      setFirstOpenCard(false);
+      setIsBlockOnClick(false);
+      setTurns(turns + 1);
+    }, TIME_WHILE_COMPARING);
   };
-  const closeAll = useCallback(() => {
-    setCharactersState(
-      charactersState?.map(({ ...values }) => ({
-        ...values,
-        open: false,
-        wasFound: false,
-      }))
-    );
-  }, [charactersState]);
 
   const openCard = ({ position, id }: AllNumberKeys) => {
     if (isBlockOnClick) {
       return;
     }
-    setCharactersState((prev) =>
-      prev?.map((currentCharacter) =>
+
+    setCardsOnTheBoard((prev) =>
+      prev.map((currentCharacter) =>
         currentCharacter.position === position
           ? { ...currentCharacter, open: true }
           : currentCharacter
       )
     );
-    verifyMath(id);
+
+    if (!firstOpenCard) {
+      setFirstOpenCard(id);
+    } else {
+      verifyMatch(id);
+    }
   };
 
+  // Funtion to init game
   const onPlay = (showIntructionsAgain: boolean) => {
     if (showIntructionsAgain) {
-      setKey({ key: KEYSHOWINTRUCTIONS, value: "not" });
+      setKey({ key: KEY_SHOW_INTRUCTIONS, value: "not" });
     }
+
     setPlay(true);
   };
+
+  const closeAll = useCallback(() => {
+    setCardsOnTheBoard(
+      cardsOnTheBoard.map(({ ...values }) => ({
+        ...values,
+        open: false,
+        wasFound: false,
+      }))
+    );
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   useEffect(() => {
-    if (play) {
-      setTimeout(() => {
-        closeAll();
-      }, 3000);
-    }
     if (!showIntructions) {
       setPlay(true);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [play, showIntructions]);
+  }, []);
+
+  useEffect(() => {
+    let timerToCloseAllCards: NodeJS.Timeout;
+    if (play) {
+      timerToCloseAllCards = setTimeout(() => {
+        closeAll();
+      }, TIME_TO_CLOSE_ALL_CARDS);
+    }
+    return () => {
+      if (timerToCloseAllCards) {
+        clearTimeout(timerToCloseAllCards);
+      }
+    };
+  }, [closeAll, play]);
 
   return (
     <>
@@ -120,11 +128,11 @@ const Play = () => {
       ) : (
         <>
           <div className="d-flex jc-space-between">
-            <h2 className="mb-1-5">{`Aciertos: ${success}`}</h2>
+            <h2 className="mb-1-5">{`Aciertos: ${matchesGot}`}</h2>
             <h2 className="mb-1-5">{`Turnos: ${turns}`}</h2>
           </div>
-          {charactersState && (
-            <GameBoard data={charactersState} onClickToCard={openCard} />
+          {cardsOnTheBoard.length && (
+            <GameBoard cardsData={cardsOnTheBoard} onClickToCard={openCard} />
           )}
         </>
       )}
