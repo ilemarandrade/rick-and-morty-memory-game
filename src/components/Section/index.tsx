@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import classes from "./Section.module.scss";
+
 interface ISection {
   children?: ReactNode;
 }
