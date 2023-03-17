@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GameOver should render without errors 1`] = `
+<div>
+  <div
+    class="root"
+  >
+    <h2
+      class="mb-1 font-primary"
+    >
+      ¡Felicitaciones!
+    </h2>
+    <p
+      class="mb-1-5"
+    >
+      Terminaste el juego con 0 turnos
+    </p>
+    <div
+      class="d-flex jc-space-between containerButtons"
+    >
+      <a
+        class="button-base button-color-primary"
+        color="primary"
+        href="/play"
+      >
+        Repetir
+      </a>
+      <a
+        aria-current="page"
+        class="button-base button-color-secondary active"
+        color="secondary"
+        href="/"
+      >
+        Inicio
+      </a>
+    </div>
+  </div>
+</div>
+`;

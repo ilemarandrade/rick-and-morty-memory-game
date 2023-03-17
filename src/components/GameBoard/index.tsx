@@ -33,7 +33,7 @@ const GameBoard = ({ data, onClickToCard }: Props) => {
             wasFound = false,
           }) => (
             <Card
-              key={id + position + name}
+              key={`${id}-${position}-${name}`}
               name={name}
               img={image}
               open={open}

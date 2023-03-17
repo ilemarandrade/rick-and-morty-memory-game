@@ -1,9 +1,14 @@
 import React from "react";
 import { render } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
+import CharactersProvider from "../../providers/CharactersProvider";
 
 const AllTheProviders = ({ children }) => {
-  return <BrowserRouter>{children}</BrowserRouter>;
+  return (
+    <BrowserRouter>
+      <CharactersProvider>{children}</CharactersProvider>
+    </BrowserRouter>
+  );
 };
 
 const customRender = (ui, { ...options } = {}) =>
