@@ -8,7 +8,8 @@ interface IContext {
   turns: number;
   setTurns: (n: number) => void;
 }
-const CharactersContext = createContext<IContext>({
+
+const GameControlContext = createContext<IContext>({
   characters: null,
   success: 0,
   setSuccess: () => {},
@@ -16,14 +17,16 @@ const CharactersContext = createContext<IContext>({
   setTurns: () => {},
 });
 
-export const useCharactersState = () => {
-  const context = useContext(CharactersContext);
+export const GameControlState = () => {
+  const context = useContext(GameControlContext);
+
   if (!context) {
     throw new Error(
-      "useCharactersState must be used within a CharactersProvider"
+      "GameControlState must be used within a GameControlProvider"
     );
   }
+
   return context;
 };
 
-export default CharactersContext;
+export default GameControlContext;
