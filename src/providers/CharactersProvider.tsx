@@ -5,11 +5,13 @@ import routes from "../constants/routes";
 import CharactersContext from "../contexts/CharactersContext";
 import useGetCharacters from "../hooks/api/useGetCharacter";
 import { getKey, KEYSHOWINTRUCTIONS } from "../utils/localStorage";
+import env from "../utils/environment";
 
 interface Props {
   children: ReactNode;
 }
 const CharactersProvider = ({ children }: Props) => {
+  const isTest = env.APP_ENV === "test";
   const history = useHistory();
   const { pathname } = useLocation();
   const isPlaying = pathname === routes.PLAY;
@@ -18,7 +20,6 @@ const CharactersProvider = ({ children }: Props) => {
   const [success, setSuccess] = useState(0);
   const [turns, setTurns] = useState(0);
   const showIntructions = !(getKey(KEYSHOWINTRUCTIONS) === "not");
-  console.log({ showIntructions });
   useEffect(() => {
     if (isFirstRender) {
       setTimeout(() => {
@@ -51,7 +52,9 @@ const CharactersProvider = ({ children }: Props) => {
         showIntructions,
       }}
     >
-      {(isFirstRender || isLoading) && <Loading isWelcome={isFirstRender} />}
+      {!isTest && (isFirstRender || isLoading) && (
+        <Loading isWelcome={isFirstRender} />
+      )}
       {children}
     </CharactersContext.Provider>
   );

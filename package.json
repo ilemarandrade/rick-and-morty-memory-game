@@ -43,6 +43,11 @@
       }
     ]
   },
+  "jest": {
+    "transformIgnorePatterns": [
+      "/node_modules/(?!axios)"
+    ]
+  },
   "browserslist": {
     "production": [
       ">0.2%",
@@ -68,6 +73,7 @@
     "@storybook/testing-library": "^0.0.13",
     "@types/react-router-dom": "^5.3.3",
     "babel-plugin-named-exports-order": "^0.0.2",
+    "msw": "^1.1.0",
     "prop-types": "^15.8.1",
     "webpack": "^5.76.1"
   }
