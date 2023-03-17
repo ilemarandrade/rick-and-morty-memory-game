@@ -16,7 +16,6 @@ const useGetCharacters = () => {
       onSuccess: ({ data }: { data: IResponseCharactersEndpoint }) => {
         setData(data.results);
         setIsLoading(false);
-        setIsLoading(false);
       },
       onError: () => {
         setIsLoading(false);
