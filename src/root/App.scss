@@ -5,6 +5,7 @@ $xs: 0px;
 $sm: 600px;
 $md: 1024px;
 $lg: 1200px;
+
 /**Letter colors*/
 $font-color-primary: #233a59;
 $font-color-secondary: #000000;
@@ -32,18 +33,23 @@ h5 {
 .perfect-centered {
   @extend %perfect-centered;
 }
+
 .d-flex {
   display: flex;
 }
+
 .jc-space-between {
   justify-content: space-between;
 }
+
 .mb-1 {
   margin-bottom: 1rem;
 }
+
 .mb-1-5 {
   margin-bottom: 1.5rem;
 }
+
 .font-primary {
   color: $font-color-primary;
 }

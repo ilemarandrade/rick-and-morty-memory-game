@@ -10,6 +10,7 @@ const useGetCharacters = () => {
   const [isLoading, setIsLoading] = useState(false);
   const getCharacters = useCallback(async () => {
     setIsLoading(true);
+
     handleRequest({
       method: "get",
       url: `/character`,

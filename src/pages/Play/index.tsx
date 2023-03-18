@@ -43,8 +43,9 @@ const Play = () => {
           )
         );
         setMatchesGot(matchesGot + 1);
+
         if (matchesGot === MAX_CARD_MATCHES) {
-          history.push(routes.GAMEOVER);
+          history.push(routes.GAME_OVER);
         }
       } else {
         setCardsOnTheBoard((prev) =>
@@ -54,6 +55,7 @@ const Play = () => {
           }))
         );
       }
+
       setFirstOpenCard(false);
       setIsBlockOnClick(false);
       setTurns(turns + 1);

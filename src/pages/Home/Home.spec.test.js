@@ -5,6 +5,7 @@ describe("Home", () => {
   beforeEach(() => {
     jest.resetModules();
   });
+
   it("should render without errors", async () => {
     const { container } = render(<Home />);
     // snapshot testing

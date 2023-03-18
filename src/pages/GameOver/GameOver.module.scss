@@ -3,6 +3,7 @@
 .root {
   margin: auto;
   width: min-content;
+
   h2 {
     font-size: 32px;
   }
@@ -12,6 +13,7 @@
   margin-top: 48px;
   flex-direction: column;
   gap: 25px;
+
   * {
     width: 100%;
   }
@@ -21,6 +23,7 @@
     margin-top: 72px;
     flex-direction: row;
   }
+
   .root {
     h2 {
       font-size: 48px;

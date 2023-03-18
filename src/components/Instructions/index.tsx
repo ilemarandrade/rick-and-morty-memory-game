@@ -4,6 +4,7 @@ import Button from "../Button";
 interface Props {
   onClickPlay: (t: boolean) => void;
 }
+
 const Intructions = ({ onClickPlay }: Props) => {
   const [showIntructionsAgain, setShowInstructionsAgain] = useState(false);
 
