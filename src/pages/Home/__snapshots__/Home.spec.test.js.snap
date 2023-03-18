@@ -12,7 +12,10 @@ exports[`Home should render without errors 1`] = `
   >
     <button
       class="
-      card-open card "
+      card-open 
+      card 
+      
+      d-none"
     >
       <img
         alt="Rick Sanchez"
@@ -32,7 +35,10 @@ exports[`Home should render without errors 1`] = `
     </button>
     <button
       class="
-      card-open card "
+      card-open 
+      card 
+      
+      d-none"
     >
       <img
         alt="Rick Sanchez"
@@ -52,7 +58,10 @@ exports[`Home should render without errors 1`] = `
     </button>
     <button
       class="
-      card-open card "
+      card-open 
+      card 
+      
+      d-none"
     >
       <img
         alt="Rick Sanchez"
@@ -72,7 +81,10 @@ exports[`Home should render without errors 1`] = `
     </button>
     <button
       class="
-      card-open card "
+      card-open 
+      card 
+      
+      d-none"
     >
       <img
         alt="Rick Sanchez"
@@ -92,7 +104,10 @@ exports[`Home should render without errors 1`] = `
     </button>
     <button
       class="
-      card-open card "
+      card-open 
+      card 
+      
+      d-none"
     >
       <img
         alt="Rick Sanchez"
@@ -112,7 +127,10 @@ exports[`Home should render without errors 1`] = `
     </button>
     <button
       class="
-      card-open card "
+      card-open 
+      card 
+      
+      d-none"
     >
       <img
         alt="Rick Sanchez"
@@ -132,7 +150,10 @@ exports[`Home should render without errors 1`] = `
     </button>
     <button
       class="
-      card-open card "
+      card-open 
+      card 
+      
+      d-none"
     >
       <img
         alt="Rick Sanchez"
@@ -152,7 +173,10 @@ exports[`Home should render without errors 1`] = `
     </button>
     <button
       class="
-      card-open card "
+      card-open 
+      card 
+      
+      d-none"
     >
       <img
         alt="Rick Sanchez"
@@ -172,7 +196,10 @@ exports[`Home should render without errors 1`] = `
     </button>
     <button
       class="
-      card-open card "
+      card-open 
+      card 
+      
+      d-none"
     >
       <img
         alt="Rick Sanchez"
@@ -192,7 +219,10 @@ exports[`Home should render without errors 1`] = `
     </button>
     <button
       class="
-      card-open card "
+      card-open 
+      card 
+      
+      d-none"
     >
       <img
         alt="Rick Sanchez"
@@ -212,7 +242,10 @@ exports[`Home should render without errors 1`] = `
     </button>
     <button
       class="
-      card-open card "
+      card-open 
+      card 
+      
+      d-none"
     >
       <img
         alt="Rick Sanchez"
@@ -232,7 +265,10 @@ exports[`Home should render without errors 1`] = `
     </button>
     <button
       class="
-      card-open card "
+      card-open 
+      card 
+      
+      d-none"
     >
       <img
         alt="Rick Sanchez"
