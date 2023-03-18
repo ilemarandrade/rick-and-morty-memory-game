@@ -3,7 +3,7 @@ import { useLocation } from "react-router";
 import routes from "../constants/routes";
 import { useGameControlState } from "../contexts/GameControlContext";
 
-const useWatcherToResetGame = () => {
+const useWatcherToResetGame: () => void = () => {
   const { setMatchesGot, setTurns } = useGameControlState();
   const { pathname } = useLocation();
 
