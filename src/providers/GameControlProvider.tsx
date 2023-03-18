@@ -6,6 +6,7 @@ import GameControlContext from "../contexts/GameControlContext";
 import useGetCharacters from "../hooks/api/useGetCharacter";
 import environment from "../utils/environment";
 import { getKey, KEY_SHOW_INTRUCTIONS } from "../utils/localStorage";
+import useWatcherToResetGame from "../hooks/useWatcherToResetGame";
 
 const TIME_TO_REMOVE_LOADING = 2000;
 
@@ -26,6 +27,9 @@ const GameControlProvider = ({ children }: Props) => {
   const isTest = useMemo(() => environment.APP_ENV === "test", []);
   const isPlaying = useMemo(() => pathname === routes.PLAY, [pathname]);
 
+  // UseEffect with the purpose of reset game when finish game
+  useWatcherToResetGame();
+
   // UseEffect  with the purpose of obtaining the characters
   // and avoid showing disallowed views when the characters do not exist
   useEffect(() => {
@@ -35,16 +39,6 @@ const GameControlProvider = ({ children }: Props) => {
       history.push(routes.HOME);
     }
   }, [characters, getCharacters, history, isFirstRender, pathname]);
-
-  // UseEffect with the purpose of reset game when finish game
-  // TODO improve this useEffect
-  useEffect(() => {
-    if (pathname !== routes.PLAY) {
-      setMatchesGot(0);
-    } else {
-      setTurns(0);
-    }
-  }, [pathname]);
 
   // UseEffect with the purpose of removing the Loading 2 seconds after starting the app
   useEffect(() => {

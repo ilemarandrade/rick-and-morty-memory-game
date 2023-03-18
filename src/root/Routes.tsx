@@ -1,6 +1,7 @@
 import { lazy, LazyExoticComponent, Suspense } from "react";
 import { Route, Switch } from "react-router";
 import routes from "../constants/routes";
+
 interface IRoutesPublic {
   component: LazyExoticComponent<() => JSX.Element>;
   path: string;
@@ -19,7 +20,7 @@ const routesPublic: IRoutesPublic[] = [
   },
   {
     component: lazy(() => import("../pages/GameOver")),
-    path: routes.GAMEOVER,
+    path: routes.GAME_OVER,
   },
 ];
 

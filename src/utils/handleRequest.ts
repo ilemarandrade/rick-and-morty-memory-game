@@ -1,5 +1,6 @@
 import { AxiosRequestConfig, Method } from "axios";
 import axiosInstance from "./axiosInstance";
+
 interface IhandleRequest<T> {
   method: Method;
   url: string;

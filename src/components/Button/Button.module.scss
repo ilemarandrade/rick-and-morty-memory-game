@@ -21,6 +21,7 @@ $secondary-color: #d8e054;
   color: App.$font-color-primary;
   transition: transform 0.2s;
   padding: 0 80px;
+
   &:hover {
     transform: scale(1.05);
   }

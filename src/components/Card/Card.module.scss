@@ -76,10 +76,16 @@
   }
 }
 
-@media (max-width: 424px) {
+@media (max-width: 374px) {
   .card {
     padding: 8px;
     width: 28vw;
     min-height: 28vw;
+  }
+
+  .name,
+  .origin,
+  .d-none {
+    display: none;
   }
 }

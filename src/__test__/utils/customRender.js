@@ -1,9 +1,8 @@
-import React from "react";
-import { render } from "@testing-library/react";
+import { act, render } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
 import GameControlProvider from "../../providers/GameControlProvider";
 
-const AllTheProviders = ({ children }) => {
+const NetworkProviders = ({ children }) => {
   return (
     <BrowserRouter>
       <GameControlProvider>{children}</GameControlProvider>
@@ -11,14 +10,26 @@ const AllTheProviders = ({ children }) => {
   );
 };
 
-const customRender = (ui, { ...options } = {}) =>
+const SimpleProviders = ({ children }) => {
+  return <BrowserRouter>{children}</BrowserRouter>;
+};
+
+const simpleRender = (ui, { ...options } = {}) =>
   render(ui, {
-    wrapper: ({ children }) => <AllTheProviders children={children} />,
+    wrapper: ({ children }) => <SimpleProviders children={children} />,
     ...options,
   });
+
+const networkRender = async (ui, { ...options } = {}) =>
+  await act(() =>
+    render(ui, {
+      wrapper: ({ children }) => <NetworkProviders children={children} />,
+      ...options,
+    })
+  );
 
 // re-export everything
 export * from "@testing-library/react";
 
 // override render method
-export { customRender as render };
+export { simpleRender as render, networkRender };
