@@ -8,6 +8,7 @@ describe("GameOver", () => {
 
   it("should render without errors", async () => {
     const { container } = render(<GameOver />);
+
     // snapshot testing
     await waitFor(() => {
       screen.getByText("¡Felicitaciones!");

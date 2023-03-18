@@ -9,6 +9,7 @@ describe("<Section />", () => {
         <div>I am a children</div>
       </Section>
     );
+
     expect(screen.getByText("I am a children")).toBeInTheDocument();
   });
 });

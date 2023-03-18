@@ -3,4 +3,5 @@ const routes = {
   PLAY: "/play",
   GAME_OVER: "/game_over",
 };
+
 export default routes;
