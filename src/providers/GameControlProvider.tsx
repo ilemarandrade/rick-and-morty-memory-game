@@ -28,7 +28,7 @@ const GameControlProvider = ({ children }: Props) => {
   const isPlaying = useMemo(() => pathname === routes.PLAY, [pathname]);
 
   // UseEffect with the purpose of reset game when finish game
-  useWatcherToResetGame();
+  useWatcherToResetGame(pathname, setMatchesGot, setTurns);
 
   // UseEffect  with the purpose of obtaining the characters
   // and avoid showing disallowed views when the characters do not exist

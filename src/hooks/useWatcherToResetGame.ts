@@ -1,12 +1,11 @@
 import { useEffect } from "react";
-import { useLocation } from "react-router";
 import routes from "../constants/routes";
-import { useGameControlState } from "../contexts/GameControlContext";
 
-const useWatcherToResetGame: () => void = () => {
-  const { setMatchesGot, setTurns } = useGameControlState();
-  const { pathname } = useLocation();
-
+const useWatcherToResetGame = (
+  pathname: string,
+  setMatchesGot: (n: number) => void,
+  setTurns: (n: number) => void
+) => {
   useEffect(() => {
     if (pathname !== routes.PLAY) {
       setMatchesGot(0);
