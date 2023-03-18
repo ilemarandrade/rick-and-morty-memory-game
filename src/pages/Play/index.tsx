@@ -111,11 +111,13 @@ const Play = () => {
 
   useEffect(() => {
     let timerToCloseAllCards: NodeJS.Timeout;
+
     if (play) {
       timerToCloseAllCards = setTimeout(() => {
         closeAll();
       }, TIME_TO_CLOSE_ALL_CARDS);
     }
+
     return () => {
       if (timerToCloseAllCards) {
         clearTimeout(timerToCloseAllCards);

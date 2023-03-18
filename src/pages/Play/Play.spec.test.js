@@ -7,12 +7,14 @@ describe("Play", () => {
   beforeEach(() => {
     jest.resetModules();
   });
+
   it("should render without errors and show the instructions", async () => {
     const { container } = render(<Play />);
     // snapshot testing
     await waitFor(() => {
       screen.getByText("Empezar");
     });
+
     expect(container).toMatchSnapshot();
   });
   it("should render without errors and show game board", async () => {
