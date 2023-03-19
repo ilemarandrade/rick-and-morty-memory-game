@@ -26,8 +26,9 @@ const Card = ({
       className={`
       ${classes[`card-${open ? "open" : "close"}`]} 
       ${classes.card} 
-      ${classes[wasFound ? "wasFound" : ""]}
-      ${!isPlaying && "d-none"}`}
+      ${wasFound ? classes.wasFound : ""}
+      ${isPlaying ? classes["not-show-texts"] : ""}
+      `}
       onClick={() => !open && onClick()}
     >
       {open ? (
