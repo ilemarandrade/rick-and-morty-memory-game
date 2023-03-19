@@ -1,4 +1,5 @@
 import { useState } from "react";
+import intructions from "../../constants/intructions";
 import Button from "../Button";
 
 interface Props {
@@ -12,15 +13,9 @@ const Intructions = ({ onClickPlay }: Props) => {
     <>
       <h1 className="ta-center">Intrucciones</h1>
       <ul>
-        <li>Tendrás 3 segundos para memorizar las cartas.</li>
-        <li>Una vez volteadas puedes seleccionar 2 cartas.</li>
-        <li>Si las cartas abiertas son iguales te sumará puntos a favor.</li>
-        <li>
-          Si las cartas son diferentes se colocarán como estaban y podrás volver
-          a elegir otras dos más.
-        </li>
-        <li>Procura hacerlo la menor cantidad de intentos.</li>
-        <li>Mientras menos intentos/turnos, más memoria tienes!</li>
+        {intructions.map((intruction, index) => (
+          <li key={`${index}-${intruction.slice(0, 8)}`}>{intruction}</li>
+        ))}
       </ul>
       <div className="perfect-centered mb-1-5">
         <input
