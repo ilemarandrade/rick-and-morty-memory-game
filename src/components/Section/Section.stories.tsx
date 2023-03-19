@@ -22,6 +22,7 @@ SectionTemplate.args = {
           origin: "Alive - Human",
           open: true,
           id: 1,
+          position: 1,
           onClick: () => {
             alert("hola");
           },

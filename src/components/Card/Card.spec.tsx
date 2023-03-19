@@ -8,6 +8,7 @@ const propsToCard = {
   origin: "Alive - Human",
   open: false,
   id: 1,
+  position: 1,
   onClick: jest.fn(),
 };
 
