@@ -1,0 +1,88 @@
+{
+  "results": [
+    {
+      "id": 1,
+      "name": "Rick Sanchez",
+      "status": "Alive",
+      "species": "Human",
+      "image": "https://placekitten.com/200/200"
+    },
+    {
+      "id": 2,
+      "name": "Rick Sanchez",
+      "status": "Alive",
+      "species": "Human",
+      "image": "https://placekitten.com/200/200"
+    },
+    {
+      "id": 3,
+      "name": "Rick Sanchez",
+      "status": "Alive",
+      "species": "Human",
+      "image": "https://placekitten.com/200/200"
+    },
+    {
+      "id": 4,
+      "name": "Rick Sanchez",
+      "status": "Alive",
+      "species": "Human",
+      "image": "https://placekitten.com/200/200"
+    },
+    {
+      "id": 5,
+      "name": "Rick Sanchez",
+      "status": "Alive",
+      "species": "Human",
+      "image": "https://placekitten.com/200/200"
+    },
+    {
+      "id": 6,
+      "name": "Rick Sanchez",
+      "status": "Alive",
+      "species": "Human",
+      "image": "https://placekitten.com/200/200"
+    },
+    {
+      "id": 7,
+      "name": "Rick Sanchez",
+      "status": "Alive",
+      "species": "Human",
+      "image": "https://placekitten.com/200/200"
+    },
+    {
+      "id": 8,
+      "name": "Rick Sanchez",
+      "status": "Alive",
+      "species": "Human",
+      "image": "https://placekitten.com/200/200"
+    },
+    {
+      "id": 9,
+      "name": "Rick Sanchez",
+      "status": "Alive",
+      "species": "Human",
+      "image": "https://placekitten.com/200/200"
+    },
+    {
+      "id": 10,
+      "name": "Rick Sanchez",
+      "status": "Alive",
+      "species": "Human",
+      "image": "https://placekitten.com/200/200"
+    },
+    {
+      "id": 11,
+      "name": "Rick Sanchez",
+      "status": "Alive",
+      "species": "Human",
+      "image": "https://placekitten.com/200/200"
+    },
+    {
+      "id": 12,
+      "name": "Rick Sanchez",
+      "status": "Alive",
+      "species": "Human",
+      "image": "https://placekitten.com/200/200"
+    }
+  ]
+}
