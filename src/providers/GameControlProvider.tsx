@@ -42,7 +42,7 @@ const GameControlProvider = ({ children }: Props) => {
 
   // UseEffect with the purpose of removing the Loading 2 seconds after starting the app
   useEffect(() => {
-    let timerToRemoveLoading: NodeJS.Timeout | undefined;
+    let timerToRemoveLoading: NodeJS.Timeout;
 
     if (isFirstRender) {
       timerToRemoveLoading = setTimeout(() => {
