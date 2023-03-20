@@ -32,19 +32,23 @@ const GameBoard = ({ cardsData, onClickToCard = () => {} }: IGameBoard) => {
             species,
             id,
             open = true,
-            position = 0,
             wasFound = false,
-          }) => (
-            <Card
-              key={`${id}-${position}-${name}`}
-              name={name}
-              img={image}
-              open={open}
-              origin={`${status} - ${species}`}
-              onClick={() => handlerOnClick({ id, position })}
-              wasFound={wasFound}
-            />
-          )
+            position = 0,
+          }) => {
+            return (
+              <Card
+                key={`${id}-${position}-${name}`}
+                name={name}
+                img={image}
+                open={open}
+                origin={`${status} - ${species}`}
+                onClick={() => handlerOnClick({ id, position })}
+                wasFound={wasFound}
+                id={id}
+                position={position}
+              />
+            );
+          }
         )}
       </>
     ),

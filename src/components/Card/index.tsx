@@ -9,6 +9,8 @@ interface ICard {
   open?: boolean;
   onClick: () => void;
   wasFound?: boolean;
+  id?: number;
+  position: number;
 }
 
 const Card = ({
@@ -18,6 +20,8 @@ const Card = ({
   open = false,
   onClick,
   wasFound = false,
+  id,
+  position,
 }: ICard) => {
   const { isPlaying } = useGameControlState();
 
@@ -30,6 +34,7 @@ const Card = ({
       ${isPlaying ? classes["not-show-texts"] : ""}
       `}
       onClick={() => !open && onClick()}
+      data-testid={`card-${id}${position || ""}`}
     >
       {open ? (
         <>
