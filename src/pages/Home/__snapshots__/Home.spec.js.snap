@@ -15,7 +15,9 @@ exports[`Home should render without errors 1`] = `
       card-open 
       card 
       
-      d-none"
+      
+      "
+      data-testid="card-1"
     >
       <img
         alt="Rick Sanchez"
@@ -38,7 +40,9 @@ exports[`Home should render without errors 1`] = `
       card-open 
       card 
       
-      d-none"
+      
+      "
+      data-testid="card-2"
     >
       <img
         alt="Rick Sanchez"
@@ -61,7 +65,9 @@ exports[`Home should render without errors 1`] = `
       card-open 
       card 
       
-      d-none"
+      
+      "
+      data-testid="card-3"
     >
       <img
         alt="Rick Sanchez"
@@ -84,7 +90,9 @@ exports[`Home should render without errors 1`] = `
       card-open 
       card 
       
-      d-none"
+      
+      "
+      data-testid="card-4"
     >
       <img
         alt="Rick Sanchez"
@@ -107,7 +115,9 @@ exports[`Home should render without errors 1`] = `
       card-open 
       card 
       
-      d-none"
+      
+      "
+      data-testid="card-5"
     >
       <img
         alt="Rick Sanchez"
@@ -130,7 +140,9 @@ exports[`Home should render without errors 1`] = `
       card-open 
       card 
       
-      d-none"
+      
+      "
+      data-testid="card-6"
     >
       <img
         alt="Rick Sanchez"
@@ -153,7 +165,9 @@ exports[`Home should render without errors 1`] = `
       card-open 
       card 
       
-      d-none"
+      
+      "
+      data-testid="card-7"
     >
       <img
         alt="Rick Sanchez"
@@ -176,7 +190,9 @@ exports[`Home should render without errors 1`] = `
       card-open 
       card 
       
-      d-none"
+      
+      "
+      data-testid="card-8"
     >
       <img
         alt="Rick Sanchez"
@@ -199,7 +215,9 @@ exports[`Home should render without errors 1`] = `
       card-open 
       card 
       
-      d-none"
+      
+      "
+      data-testid="card-9"
     >
       <img
         alt="Rick Sanchez"
@@ -222,7 +240,9 @@ exports[`Home should render without errors 1`] = `
       card-open 
       card 
       
-      d-none"
+      
+      "
+      data-testid="card-10"
     >
       <img
         alt="Rick Sanchez"
@@ -245,7 +265,9 @@ exports[`Home should render without errors 1`] = `
       card-open 
       card 
       
-      d-none"
+      
+      "
+      data-testid="card-11"
     >
       <img
         alt="Rick Sanchez"
@@ -268,7 +290,9 @@ exports[`Home should render without errors 1`] = `
       card-open 
       card 
       
-      d-none"
+      
+      "
+      data-testid="card-12"
     >
       <img
         alt="Rick Sanchez"

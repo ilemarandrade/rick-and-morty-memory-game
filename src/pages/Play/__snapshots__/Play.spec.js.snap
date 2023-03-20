@@ -24,7 +24,9 @@ exports[`Play should render without errors and show game board 1`] = `
       card-open 
       card 
       
-      d-none"
+      
+      "
+      data-testid="card-12"
     >
       <img
         alt="Rick Sanchez"
@@ -47,7 +49,9 @@ exports[`Play should render without errors and show game board 1`] = `
       card-open 
       card 
       
-      d-none"
+      
+      "
+      data-testid="card-31"
     >
       <img
         alt="Rick Sanchez"
@@ -70,7 +74,9 @@ exports[`Play should render without errors and show game board 1`] = `
       card-open 
       card 
       
-      d-none"
+      
+      "
+      data-testid="card-72"
     >
       <img
         alt="Rick Sanchez"
@@ -93,7 +99,9 @@ exports[`Play should render without errors and show game board 1`] = `
       card-open 
       card 
       
-      d-none"
+      
+      "
+      data-testid="card-123"
     >
       <img
         alt="Rick Sanchez"
@@ -116,7 +124,9 @@ exports[`Play should render without errors and show game board 1`] = `
       card-open 
       card 
       
-      d-none"
+      
+      "
+      data-testid="card-14"
     >
       <img
         alt="Rick Sanchez"
@@ -139,7 +149,9 @@ exports[`Play should render without errors and show game board 1`] = `
       card-open 
       card 
       
-      d-none"
+      
+      "
+      data-testid="card-95"
     >
       <img
         alt="Rick Sanchez"
@@ -162,7 +174,9 @@ exports[`Play should render without errors and show game board 1`] = `
       card-open 
       card 
       
-      d-none"
+      
+      "
+      data-testid="card-16"
     >
       <img
         alt="Rick Sanchez"
@@ -185,7 +199,9 @@ exports[`Play should render without errors and show game board 1`] = `
       card-open 
       card 
       
-      d-none"
+      
+      "
+      data-testid="card-77"
     >
       <img
         alt="Rick Sanchez"
@@ -208,7 +224,9 @@ exports[`Play should render without errors and show game board 1`] = `
       card-open 
       card 
       
-      d-none"
+      
+      "
+      data-testid="card-28"
     >
       <img
         alt="Rick Sanchez"
@@ -231,7 +249,9 @@ exports[`Play should render without errors and show game board 1`] = `
       card-open 
       card 
       
-      d-none"
+      
+      "
+      data-testid="card-29"
     >
       <img
         alt="Rick Sanchez"
@@ -254,7 +274,9 @@ exports[`Play should render without errors and show game board 1`] = `
       card-open 
       card 
       
-      d-none"
+      
+      "
+      data-testid="card-910"
     >
       <img
         alt="Rick Sanchez"
@@ -277,7 +299,9 @@ exports[`Play should render without errors and show game board 1`] = `
       card-open 
       card 
       
-      d-none"
+      
+      "
+      data-testid="card-311"
     >
       <img
         alt="Rick Sanchez"
