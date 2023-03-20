@@ -1,3 +1,4 @@
+
 # rick-and-morty-memory-game
 
 ## Proceso de desarrollo
@@ -8,23 +9,25 @@
 - Definir Proveedores a crear.
 - Definir Layouts a crear.
 - Definir nombre de las rutas.
-- Descargar las imagenes necesarias de figma.
-- Desarrollar cada componente y layout en storybook ademas hacer sus respectivos test unitarios a lo componentes.
+- Descargar las imágenes necesarias de Figma.
+- Desarrollar cada componente y layout en storybook además hacer sus respectivos test unitarios a los componentes.
 - Crear rutas de la app
-- Maquetear vistas.
+- Maquetar vistas.
 - Agregar endpoint.
-- Agregar logicas y pautas del juego.
+- Agregar lógicas y pautas del juego.
 
-### Tools de desarrollo
+## Tools de desarrollo
 
 - React
 - Axios
-- Typescript
-- Sass (para manejo de los styles con extension scss)
+- TypeScript
+- Sass (para manejo de los styles con extensión SCSS)
 - Storybook
 - react-router-dom
+- testing-library-react
+- Cypress
 
-### Estrutura de carpetas
+## Estructura de carpetas
 
 ```
 ├───📁 src/
@@ -36,7 +39,7 @@
 │   │   └───📁 MyComponent/
 │   │   │   └───📄 index.tsx
 │   │   │   └───📄 MyComponent.modules.scss
-│   │   │   └───📄 MyComponent.test.tsx
+│   │   │   └───📄 MyComponent.spec.tsx
 │   │   │   └───📄 MyComponent.stories.ts
 │   └───📁 hooks/
 │   │   └───📁 api/
@@ -48,31 +51,36 @@
 │   └───📁 pages/
 │   └───📁 providers/
 │   └───📁 root/
+│   │   │   └───📄 App.scss
+│   │   │   └───📄 App.tsx
+│   │   │   └───📄 Providers.tsx
+│   │   │   └───📄 Routes.tsx
 │   └───📄 index.js
-│   └───📄 app.scss
 ```
 
-#### Breve explicación del proposito de cada carpeta
+#### Breve explicación del propósito de cada carpeta
 
 - `/src`:
   Es la carpeta principal de todo el proyecto.
+
 - `/src/assets`:
-  contiene todo lo relacionado con las imagenes, iconos, fonts, por ahora solo tiene `/src/assets/images` pero si es necesario colocar iconos o fonts deberia crearse unas nuevas carpetas llamadas `/icons` y `/fonts` respectivamente dentro de `/src/assets`.
+  contiene todo lo relacionado con las imágenes, iconos, fuentes, por ahora solo tiene `/src/assets/images`, pero si es necesario colocar iconos o fuentes debería crearse unas nuevas carpetas llamadas `/icons` y `/fonts` respectivamente dentro de `/src/assets`.
 
 - `/src/constants`:
-  Contiene variables constantes que son usadas en mas de un lugar de la app, por ejemplo `routes.ts` guardara el valor de las rutas de la app.
+  Contiene variables constantes que son usadas en más de un lugar de la app, por ejemplo `routes.ts` guardara el valor de las rutas de la app.
 
 - `/src/contexts`:
   Contiene los customs contexts creados de react.
-- `/src/components`:
-  Contiene los componentes de la app, la cual tendra un forma especifica de crear los componentes. Como se muestra en el ejemplo de la estructura de las carpetas se debe crear una carpeta con **el nombre del componente**, que internamente tendra cuatro archivos que son:
 
-  - `index.tsx`: archivo donde se maneja la logica y el jsx del componente.
-  - `MyComponent.modules.scss`: archivo con el css del componente.
-  - `MyComponent.test.tsx`: archivo con el test unitario del componente.
+- `/src/components`:
+  Contiene los componentes de la app, la cual tendrá una forma específica de crear los componentes. Como se muestra en el ejemplo de la estructura de las carpetas; se debe crear una carpeta con **el nombre del componente**, que internamente tendrá cuatro archivos que son:
+
+  - `index.tsx`: archivo donde se maneja la lógica y el jsx del componente.
+  - `MyComponent.modules.scss`: archivo con el CSS del componente.
+  - `MyComponent.spec.tsx`: archivo con el test unitario del componente.
   - `MyComponent.stories.tsx`: archivo con la stories del componente.
 
-- `/src/hooks`: esta carpeta contiene los customs hooks de la app, en su primer nivel se puede colocar los customs hooks. A nivel de la carpeta `/api` se colocaran los customs hooks que manejen los request al servidor.
+- `/src/hooks`: esta carpeta contiene los customs hooks de la app, en su primer nivel se puede colocar los customs hooks. A nivel de la carpeta `/api` se colocarán los customs hooks que manejen los request al servidor.
 
 - `/src/layouts`: esta carpeta contiene los layouts creados de la app.
 
@@ -80,10 +88,42 @@
 
 - `/src/providers`: esta carpeta contiene los customs providers creados de react.
 
-- `/src/root`: esta carpeta contiene los archivos raices de la app que son:
+- `/src/root`: esta carpeta contiene los archivos raíces de la app que son:
 
   - `/Providers.ts`: archivo que envuelve los providers.
+ 
   - `/Routes.ts`: archivo con las rutas de la app. (construido con react-router-dom)
-  - `/App.ts`: que envuelve a `providers`, `routes` o algun componente o dev-tools que deba estar presente en toda la app.
+ 
+  - `/App.ts`: que envuelve a `providers`, `routes` o algún componente o dev-tools que deba estar presente en toda la app.
 
-- `/src/app.scss`: contiene las clases usadas en multiples lugares de la app, como por ejemplo `.perfect-center` o `text-center` etc.
+**Nota:** Esta estructura de carpetas es de tipo de fichero, pero se tiene como premisa que cada componente, página, hook entre otros, tengan su propia carpeta  a partir de que se le agregue test, stories, CSS o cualquier archivo directamente relacionado con el funcionamiento óptimo de los mismos. 
+Por ejemplo:
+```
+│   │  ──📁 MyComponent/
+│   │   │   └───📄 index.tsx
+│   │   │   └───📄 MyComponent.modules.scss
+│   │   │   └───📄 MyComponent.test.tsx
+│   │   │   └───📄 MyComponent.stories.ts
+```
+
+
+## Styles
+Referente a los styles estuve usando sass específicamente en archivos .scss, los cuales cuenta con `root/App.scss` para los styles globales o compartidos por más de un módulo de la app como por ejemplo `.perfect-center` o `text-center` etc;  además cada módulo posee su propio `.scss` si es necesario.
+
+## Tests
+Para lograr estabilidad en el funcionamiento de cada módulo de la app apliqué tres tipos de test: 
+
+- Test unitarios: utilice jest y testing library react.
+- Snapshots: utilice jest y testing library react.
+- e2e: utilice Cypress con testing library react.
+
+## Deploy
+
+Utilice vercel para el deploy, actualmente poseo dos dominios, uno para la v1 y uno para la v2.
+
+-v1: Contiene las funcionalidades basadas en las pautas del juego en conjunto con un diseño pixel a pixel de lo que está en Figma.
+[https://rick-and-morty-memory-game-v1.vercel.app/](https://rick-and-morty-memory-game-v1.vercel.app/)
+
+-v2: Esta versión fue un poco más libre respecto a diseño, pero de igual forma mantiene principios del diseño que está alojado en Figma, se le añadió ciertos ajustes para hacer más amigable el juego referente a la experiencia de usuario, por ejemplo: responsive design, instrucciones, el botón de jugar flotante...
+
+[https://rick-and-morty-memory-game-v2.vercel.app/](https://rick-and-morty-memory-game-v2.vercel.app/)
