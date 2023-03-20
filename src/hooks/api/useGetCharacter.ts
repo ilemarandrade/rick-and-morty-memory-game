@@ -16,7 +16,15 @@ const useGetCharacters = () => {
       method: "get",
       url: `/character`,
       onSuccess: ({ data }: { data: IResponseCharactersEndpoint }) => {
-        setData(data.results);
+        setData(
+          data.results.map(({ id, name, species, status, image }) => ({
+            id,
+            name,
+            species,
+            status,
+            image,
+          }))
+        );
         setIsLoading(false);
       },
       onError: () => {
