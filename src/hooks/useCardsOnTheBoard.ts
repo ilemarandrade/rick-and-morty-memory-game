@@ -1,11 +1,20 @@
 import { useState } from "react";
+import environment from "../utils/environment";
 
-const shuffleCards = <T>(cards: T[]) => {
-  const randomAllCard = cards.sort(() => 0.5 - Math.random());
+export const shuffleCards = <T>(cards: T[]) => {
+  let cardsToBoard;
+  const isCypress = environment.APP_ENV === "cy-test";
 
-  return [...randomAllCard.slice(0, 6), ...randomAllCard.slice(0, 6)].sort(
-    () => 0.5 - Math.random()
-  );
+  if (isCypress) {
+    cardsToBoard = [...cards.slice(0, 6), ...cards.slice(0, 6)];
+  } else {
+    const randomAllCard = cards.sort(() => 0.5 - Math.random());
+    cardsToBoard = [
+      ...randomAllCard.slice(0, 6),
+      ...randomAllCard.slice(0, 6),
+    ].sort(() => 0.5 - Math.random());
+  }
+  return cardsToBoard;
 };
 
 type IValueState<T> = {
