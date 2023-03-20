@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom";
+import { useEffect } from "react";
+import { Link, useHistory } from "react-router-dom";
 import Button from "../../components/Button";
 import routes from "../../constants/routes";
 import { useGameControlState } from "../../contexts/GameControlContext";
@@ -6,6 +7,14 @@ import classes from "./GameOver.module.scss";
 
 const GameOver = () => {
   const { turns } = useGameControlState();
+
+  const history = useHistory();
+
+  useEffect(() => {
+    if (!turns) {
+      history.push(routes.HOME);
+    }
+  }, [history, turns]);
 
   return (
     <div className={classes.root}>
