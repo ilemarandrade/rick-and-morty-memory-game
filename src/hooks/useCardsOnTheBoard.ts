@@ -3,9 +3,10 @@ import environment from "../utils/environment";
 
 export const shuffleCards = <T>(cards: T[]) => {
   let cardsToBoard;
-  const isCypress = environment.APP_ENV === "cy-test";
+  const isTest =
+    environment.APP_ENV === "cy-test" || environment.APP_ENV === "test";
 
-  if (isCypress) {
+  if (isTest) {
     cardsToBoard = [...cards.slice(0, 6), ...cards.slice(0, 6)];
   } else {
     const randomAllCard = cards.sort(() => 0.5 - Math.random());

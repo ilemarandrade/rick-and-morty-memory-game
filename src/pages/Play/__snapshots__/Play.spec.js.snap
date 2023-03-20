@@ -26,7 +26,7 @@ exports[`Play should render without errors and show game board 1`] = `
       
       
       "
-      data-testid="card-12"
+      data-testid="card-1"
     >
       <img
         alt="Rick Sanchez"
@@ -51,7 +51,7 @@ exports[`Play should render without errors and show game board 1`] = `
       
       
       "
-      data-testid="card-31"
+      data-testid="card-21"
     >
       <img
         alt="Rick Sanchez"
@@ -76,7 +76,7 @@ exports[`Play should render without errors and show game board 1`] = `
       
       
       "
-      data-testid="card-72"
+      data-testid="card-32"
     >
       <img
         alt="Rick Sanchez"
@@ -101,7 +101,7 @@ exports[`Play should render without errors and show game board 1`] = `
       
       
       "
-      data-testid="card-123"
+      data-testid="card-43"
     >
       <img
         alt="Rick Sanchez"
@@ -126,7 +126,7 @@ exports[`Play should render without errors and show game board 1`] = `
       
       
       "
-      data-testid="card-14"
+      data-testid="card-54"
     >
       <img
         alt="Rick Sanchez"
@@ -151,7 +151,7 @@ exports[`Play should render without errors and show game board 1`] = `
       
       
       "
-      data-testid="card-95"
+      data-testid="card-65"
     >
       <img
         alt="Rick Sanchez"
@@ -201,7 +201,7 @@ exports[`Play should render without errors and show game board 1`] = `
       
       
       "
-      data-testid="card-77"
+      data-testid="card-27"
     >
       <img
         alt="Rick Sanchez"
@@ -226,7 +226,7 @@ exports[`Play should render without errors and show game board 1`] = `
       
       
       "
-      data-testid="card-28"
+      data-testid="card-38"
     >
       <img
         alt="Rick Sanchez"
@@ -251,7 +251,7 @@ exports[`Play should render without errors and show game board 1`] = `
       
       
       "
-      data-testid="card-29"
+      data-testid="card-49"
     >
       <img
         alt="Rick Sanchez"
@@ -276,7 +276,7 @@ exports[`Play should render without errors and show game board 1`] = `
       
       
       "
-      data-testid="card-910"
+      data-testid="card-510"
     >
       <img
         alt="Rick Sanchez"
@@ -301,7 +301,7 @@ exports[`Play should render without errors and show game board 1`] = `
       
       
       "
-      data-testid="card-311"
+      data-testid="card-611"
     >
       <img
         alt="Rick Sanchez"
