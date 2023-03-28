@@ -137,3 +137,5 @@ Esta versión fue un poco más libre respecto a diseño, pero de igual forma man
 **Branch:** [v2](https://github.com/ilemarandrade/rick-and-morty-memory-game/tree/v2)
 
 ***Nota:** Esta versión está más completa, ya que posee los test mencionados anteriormente y una refactorización de gran parte de los archivos que componen el juego.*
+
+### Espero que disfruten leer las historia que cuenta mi código asi como yo disfrute con tanto entusiasmo este proceso de desarrollo, no se pierdan ni un solo detalle!
