@@ -7,10 +7,11 @@ import Instructions from "../../components/Instructions";
 import { KEY_SHOW_INTRUCTIONS, setKey } from "../../utils/localStorage";
 import { useGameControlState } from "../../contexts/GameControlContext";
 import useCardsOnTheBoard from "../../hooks/useCardsOnTheBoard";
-
-const MAX_CARD_MATCHES = 5;
-const TIME_WHILE_COMPARING = 1000;
-const TIME_TO_CLOSE_ALL_CARDS = 3000;
+import {
+  MAX_CARD_MATCHES,
+  TIME_TO_CLOSE_ALL_CARDS,
+  TIME_WHILE_COMPARING,
+} from "../../constants/variablesToGame";
 
 const Play = () => {
   const history = useHistory();
