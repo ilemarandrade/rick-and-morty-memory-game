@@ -7,7 +7,7 @@
   margin-bottom: 56px;
 }
 
-@media (min-width: #{App.$sm}) {
+@media (min-width: 750px) {
   .root {
     grid-template-columns: repeat(4, 1fr);
   }

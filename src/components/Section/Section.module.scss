@@ -10,7 +10,7 @@
 
 @media (min-width: #{App.$sm}) {
   .section {
-    min-width: 780px;
+    min-width: App.$sm;
     min-height: 100%;
     padding: 36px 72px;
   }

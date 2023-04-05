@@ -76,6 +76,12 @@
   }
 }
 
+@media (max-width: 450px) {
+  .card {
+    width: calc(30vw - 8px);
+  }
+}
+
 @media (max-width: 374px) {
   .card {
     padding: 8px;
