@@ -120,24 +120,10 @@ Para lograr estabilidad en el funcionamiento de cada módulo de la app apliqué 
 
 ## Deploy
 
-Utilice vercel para el deploy, actualmente poseo dos dominios, uno para la v1 y uno para la v2.
-
-### - Game v1 
-Contiene las funcionalidades basadas en las pautas del juego en conjunto con un diseño pixel a pixel de lo que está en Figma. 
-
-**Link:** [https://rick-and-morty-memory-game-v1.vercel.app/](https://rick-and-morty-memory-game-v1.vercel.app/)
-
-**Branch:** [main](https://github.com/ilemarandrade/rick-and-morty-memory-game)
-
-***Nota:** Esta versión fue hecha con el propósito de mostrar la similitud con el diseño.*
-
-### - Game v2 
-Esta versión fue un poco más libre respecto a diseño, pero de igual forma mantiene principios del diseño que está alojado en Figma, se le añadió ciertos ajustes para hacer más amigable el juego referente a la experiencia de usuario, por ejemplo: responsive design, instrucciones, el botón de jugar flotante...
+Utilice vercel para el deploy.
 
 **Link:** [https://rick-and-morty-memory-game-v2.vercel.app/](https://rick-and-morty-memory-game-v2.vercel.app/)
 
 **Branch:** [v2](https://github.com/ilemarandrade/rick-and-morty-memory-game/tree/v2)
-
-***Nota:** Esta versión está más completa, ya que posee los test mencionados anteriormente y una refactorización de gran parte de los archivos que componen el juego.*
 
 ### Espero que disfruten leer las historia que cuenta mi código asi como yo disfrute con tanto entusiasmo este proceso de desarrollo, no se pierdan ni un solo detalle!
